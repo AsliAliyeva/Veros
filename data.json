@@ -1,0 +1,376 @@
+{
+    "SliderMain": [
+        {
+            "id": 2,
+            "url": "https://veramar.gt/wp-content/uploads/2024/10/Veramar-1-1.webp"
+        },
+        {
+            "id": 4,
+            "url": "https://veramar.gt/wp-content/uploads/2024/10/Veramar-3-1.webp"
+        },
+        {
+            "id": 5,
+            "url": "https://veramar.gt/wp-content/uploads/2024/10/Veramar-4-1.webp"
+        },
+        {
+            "id": 6,
+            "url": "https://veramar.gt/wp-content/uploads/2024/10/Veramar-5-1.webp"
+        }
+    ],
+    "Colecciones": [
+        {
+            "id": 1,
+            "heading": "Bright Summer",
+            "url": "https://veramar.gt/wp-content/uploads/2024/10/Barbie-1.webp"
+        },
+        {
+            "id": 2,
+            "heading": "Summer Healing",
+            "url": "https://veramar.gt/wp-content/uploads/2024/10/Emperatriz.webp"
+        },
+        {
+            "id": 3,
+            "heading": "France Inspo",
+            "url": "https://veramar.gt/wp-content/uploads/2024/10/Paris.webp"
+        },
+        {
+            "id": 4,
+            "heading": "Veramar in the Tropics",
+            "url": "https://veramar.gt/wp-content/uploads/2024/10/Ada.webp"
+        }
+    ],
+    "Ofertas": [
+        {
+            "id": 1,
+            "img": ["https://veramar.gt/wp-content/uploads/2024/10/Versalles-1026x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Versalles-detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Versalles-detalles.webp"],
+            "name": "Versaffes",
+            "text":"Traje de baño de una pieza inspirado en el palacio de Versalles con detalle metálico en V en el cinturón y tiro alto",
+            "bottle": 14,
+            "sizes":["xs","s","m","l","xl"],
+            "precious": 680.00,
+            "current": 399.00
+        },
+        {
+            "id": 2,
+            "img": ["https://veramar.gt/wp-content/uploads/2024/10/Barbie-1.webp", "https://veramar.gt/wp-content/uploads/2024/10/Barbie-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Barbie-Frente.webp"],
+            "name": "Barbie",
+            "text":"Traje de baño de dos piezas clásico de verano. Top, straples con diseño metalico en V al frente de acero inoxidable y ajuste de amarre en la parte de atras. Bottom, high cut con diseño metálico en los costados.",
+            "bottle": 14,
+            "sizes":["xs","s","m","l","xl"],
+            "precious": 680.00,
+            "current": 399.00
+        },
+        {
+            "id": 3,
+            "img": ["https://veramar.gt/wp-content/uploads/2024/10/Iliana-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Iliana-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Iliana-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Iliana-Detalles-768x1152.webp"],
+            "name": "Iliana",
+            "text":"Traje de baño de dos piezas. Top halter al cuello y diseño de argolla de acero inoxidable al frente. Bottom de cintura alta con elástico en la parte de atrás",
+            "bottle": 10,
+            "sizes":["xs","s","m","l","xl"],
+            "precious": 680.00,
+            "current": 399.00
+        }
+    ],
+    "Tienda": [
+        {   
+             "id": 1,
+            "name": "DosPiezas",
+            "bg":"#f7ede0",
+            "products":[
+                {
+                    "id": 1,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Susana_.webp", "https://veramar.gt/wp-content/uploads/2024/10/Susana-Frente-300x300.webp", "https://veramar.gt/wp-content/uploads/2024/10/Susana-detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Susana-Detalles.webp"],
+                    "price": 719.00,
+                    "bottle": 9,
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de dos piezas con estampado. Top triangular con cintas gruesas. Bottom bikini con elástico en la parte de atrás.",
+                    "name": "Sophia"
+                },
+                {
+                    "id": 2,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Keily-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Keily-Detalles-1.webp", "https://veramar.gt/wp-content/uploads/2024/10/Keily-Detalles-2.webp"],
+                    "price": 719.00,
+                    "bottle": 14,
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de dos piezas. Top con diseño halter al cuello, con detalle de nudo al centro y copas removibles. Bottom cintura alta, pierna alta y elástico en la parte de atras.",
+                    "name": "Olivia"
+                },
+                {
+                    "id": 3,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Lea.webp", "https://veramar.gt/wp-content/uploads/2024/10/Lea-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Lea-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Lea-Detalles-1.webp"],
+                    "price": 709.00,
+                    "bottle": 9,
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de dos piezas con estampado. Top de cuello alto con detalle de nudos al frente, espalda asimétrica y ajuste anudable. Bottom estilo hipster con detalle de nudo a los costados.",
+                    "name": "Emma"
+                },
+                {
+                    "id": 4,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Lili.webp", "https://veramar.gt/wp-content/uploads/2024/10/Lily-Frente-1.webp", "https://veramar.gt/wp-content/uploads/2024/10/Lily-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Lily-Detalles.webp"],
+                    "price": 679.00,
+                    "bottle": 9,
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de dos piezas estampado. Crop top de manga larga y cuello redondo. Bottom low rise hipster con cintas ajustable al lado para más seguridad.",
+                    "name": "Isabella"
+                },
+                {
+                    "id": 5,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Cinthia_.webp", "https://veramar.gt/wp-content/uploads/2024/10/Cinthia-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Cinthia-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Cinthia-Detalles.webp"],
+                    "price": 679.00,
+                    "bottle": 10,
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de dos piezas, Top: twisted bandeau con copas removibles, Bottom: hispter bikini con diseño de cintas a los costados y elástico en la parte atras.",
+                    "name": "Ava"
+                },
+                {
+                    "id": 6,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Mia.webp", "https://veramar.gt/wp-content/uploads/2024/10/Mia-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Mia-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Mia-Detalles-1.webp"],
+                    "price": 689.00,
+                    "bottle": 9,
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de dos piezas. Crop top de manga corta y cuello redondo. Bottom de cintura alta, pierna alta y elástico en la parte de atrás.",
+                    "name": "Charlotte"
+                },
+                {
+                    "id": 7,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Paris.webp", "https://veramar.gt/wp-content/uploads/2024/10/Paris-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Paris-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Paris-Detalles-4.webp"],
+                    "price": 709.00,
+                    "bottle": 12,
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de dos piezas. Top inspirado en la torre Eiffel con cintas cruzadas hasta el abdomen. Bottom, bikini con cintas ajustables en los costados.",
+                    "name": "Grace"
+                },
+                {
+                    "id": 8,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Rosy.webp", "https://veramar.gt/wp-content/uploads/2024/10/Rosy-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Rosy-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Rosy-Detalles-768x1152.webp"],
+                    "price": 649.00,
+                    "bottle": 10,
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de dos piezas con estampado trópico. Top, strapless con cintas ajustables versátil. Bottom, tanga ajustable",
+                    "name": "Chloe"
+                },
+                {
+                    "id": 9,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Ana-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Ana-Frente-Celeste.webp", "https://veramar.gt/wp-content/uploads/2024/10/Ana-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Ana-Detalles-Celeste.webp"],
+                    "color": ["aqua", "purple"],
+                    "price": 719.00,
+                    "bottle": 11,
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de tres piezas, top triangular halter con detalle metalico al centro para ajustar cintas al cuello o ala cintura, falda multiformas que se puede utilizar como blusa, bottom tanga ajustable a los costados",
+                    "name": "Madison"
+                },
+                {
+                    "id": 10,
+                    "discount": 50,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Barbie-1.webp", "https://veramar.gt/wp-content/uploads/2024/10/Barbie-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Barbie-Frente.webp"],
+                    "price": 709.00,
+                    "bottle": 13,
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de dos piezas clásico de verano. Top, straples con diseño metalico en V al frente de acero inoxidable y ajuste de amarre en la parte de atras. Bottom, high cut con diseño metálico en los costados.",
+                    "name": "Lily"
+                },
+                {
+                    "id": 11,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Estephania-Negro_.webp", "https://veramar.gt/wp-content/uploads/2024/10/Estefania-Frente-768x1152.webp", "https://veramar.gt/wp-content/uploads/2024/10/Estefania-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Estefania-Detalles-2.webp", "https://veramar.gt/wp-content/uploads/2024/10/Estefania-Detalles-1-768x1152.webp"],
+                    "price": 659.00,
+                    "bottle": 13,
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño dos piezas. Crop top con diseño de nudo al frente y copas removibles. Bottom de cintura alta, pierna alta y control abdomen.",
+                    "name": "Zoe"
+                },
+                {
+                    "id": 12,
+                    "discount": 50,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Iliana.webp", "https://veramar.gt/wp-content/uploads/2024/10/Iliana-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Iliana-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Iliana-Detalles.webp"],
+                    "price": 639.00,
+                    "bottle": 12,
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de dos piezas. Top halter al cuello y diseño de argolla de acero inoxidable al frente. Bottom de cintura alta con elástico en la parte de atrás.",
+                    "name": "Ella"
+                }
+            ]        
+        },
+        {   
+            "id": 2,
+            "name":"UnaPieza",
+            "bg":"white",
+            "product":[
+                {
+                    "id": 1,
+                    "name": "Emma",
+                    "price": 782.49,
+                    "bottle": 14,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Bianca_-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Bianca-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Bianca-Detras.webp","https://veramar.gt/wp-content/uploads/2024/10/Bianca-Detalles-1.webp", "https://veramar.gt/wp-content/uploads/2024/10/Bianca-Detalles-3.webp"],
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de una pieza con copas removibles, abertura en el abdomen, cintas al cuello y control de abdomen."
+                },
+                {
+                    "id": 2,
+                    "name": "Sophia",
+                    "price": 671.09,
+                    "bottle": 12,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Debora_-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Deborah-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Deborah-Detalles.webp", "https://veramar.gt/wp-content/uploads/2024/10/Deborah-Detras.webp"],
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de una pieza, manga larga, cuello redondo y espalda descubierta LINEA SURF"
+                },
+                {
+                    "id": 3,
+                    "name": "Olivia",
+                    "price": 704.05,
+                    "bottle": 12,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Ada-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Ada-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Ada-Detalles-768x1152.webp", "https://veramar.gt/wp-content/uploads/2024/10/Ada-Detalles-768x1152.webp"],
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de una pieza con lineas verticales, control abdomen y detalle metalico en V en el centro."
+                },
+                {
+                    "id": 4,
+                    "name": "Chloe",
+                    "price": 795.39,
+                    "bottle": 14,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Mariana-Frente-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Mariana-detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Mariana-Detalles-1.webp", "https://veramar.gt/wp-content/uploads/2024/10/Mariana-Detalles-2-768x1152.webp"],
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de una pieza manga larga, con estampado tropico y franjas naranjas ,dos estilos espalda descubierta y espalda cerrada"
+                },
+                {
+                    "id": 5,
+                    "name": "Mia",
+                    "price": 810.67,
+                    "bottle": 12,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Emperatriz-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Emperatriz-Frente-Cruzado.webp", "https://veramar.gt/wp-content/uploads/2024/10/Emperatriz-Frente-Amarillo.webp", "https://veramar.gt/wp-content/uploads/2024/10/Emperatriz-Frente-Blanco.webp", "https://veramar.gt/wp-content/uploads/2024/10/Emperatriz-Negro.webp"],
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "color":["red", "purple", "yellow", "white", "black"],
+                    "text": "Nuestro Best Seller, diseño de una pieza versatil, puedes utilizarlo en 5 formas diferentes."
+                },
+                {
+                    "id": 6,
+                    "name": "Ava",
+                    "price": 720.9,
+                    "bottle": 12,
+                    "discount": 50,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Versalles-1026x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Versalles-frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Versalles-detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Versalles-detalles.webp"],
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de una pieza inspirado en el palacio de Versalles con detalle metálico en V en el cinturón y tiro alto"
+                },
+                {
+                    "id": 7,
+                    "name": "Ella",
+                    "price": 823.44,
+                    "bottle": 12,
+                    "discount": 20,
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Noa-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Noa-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Noa-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Noa-Detalles-4.webp"],
+                    "size": ["xs", "s", "m", "l", "xl"],
+                    "text": "Traje de baño de una pieza con tirantes cruzados en la espalda, escote redondo al frente y detalles bordes negros, LINEA SURF"
+                }
+            ]        
+        },
+        {   
+            "id": 3,
+            "name":"Salidas",
+            "bg":"#f7ede0",
+            "product":[
+                {
+                    "id": 1,
+                    "name": "Monaco",
+                    "price": 699.00,
+                    "discount": 20,
+                    "text": "",
+                    "size": ["s", "m"],
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/MONACO_3-1024x1536.webp"]
+                },
+                {
+                    "id": 2,
+                    "name": "Cartagena",
+                    "price": 599.00,
+                    "text": "Estilo camisera de tela chifón, con transparencia en color blanco",
+                    "size": ["s"],
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Cartagena_-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Cartagena_1.webp", "https://veramar.gt/wp-content/uploads/2024/10/Cartagena.webp"]
+                },
+                {
+                    "id": 3,
+                    "name": "Rio",
+                    "price": 599.00,
+                    "text": "Vestido de tela fresca con espalda descubierta, versátil en diferentes colores para usar en la playa o en la ciudad.",
+                    "size": ["m"],
+                    "color": ["black", "green", "white"],
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Rio-frente-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/MONACO_1.webp", "https://veramar.gt/wp-content/uploads/2024/10/MONACO_6.webp", "https://veramar.gt/wp-content/uploads/2024/10/MONACO_-768x1152.webp"]
+                },
+                {
+                    "id": 4,
+                    "name": "Maldivas",
+                    "price": 250.00,
+                    "text": "Estilo chaleco destapado de la espalda en tela chifón trasparente y con cintas para amarre adelante o atrás.",
+                    "color": ["orange"],
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Maldivas_-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Maldivas_2.webp", "https://veramar.gt/wp-content/uploads/2024/10/Maldivas_1.webp"]
+                },
+                {
+                    "id": 5,
+                    "name": "Hawaii",
+                    "price": 399.00,
+                    "text": "Falda de tela chifón trasparente, con diseño de broche de acero inoxidable",
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Hawaii_-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Hawaii_1.webp"]
+                }
+            ]
+              
+        },
+        {
+            "id": 4,
+            "name":"Lentes",
+            "bg":"white",
+            "product": [
+                {
+                    "id": 1,
+                    "name": "Cat Eye",
+                    "price": 200.00,
+                    "color": ["black", "white"],
+                    "text": "Lentes con marco puntiagudo, protección UV y anti rayones, viene con su caja protectora y pañuelo.",
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Cate-eye-blanco-1104x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Cate-Eye-Negro.webp", "https://veramar.gt/wp-content/uploads/2024/10/Cayte-Eye-Blanco.webp"]
+                },
+                {
+                    "id": 2,
+                    "name": "Icaro",
+                    "price": 250.00,
+                    "color": ["black", "white"],
+                    "text": "",
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Lentes-Chunky-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Chunky-negro1.webp", "https://veramar.gt/wp-content/uploads/2024/10/Chunky-negro-768x1045.webp"]
+                },
+                {
+                    "id": 3,
+                    "name": "Eclipse",
+                    "price": 300.00,
+                    "color": ["black","blue", "white", "begie"],
+                    "text": "Lentes con marco grueso, protección UV y anti rayones, viene con su caja protectora y pañuelo.",
+                    "img": ["https://veramar.gt/wp-content/uploads/2024/10/Prada-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Prada-azul.webp", "https://veramar.gt/wp-content/uploads/2024/10/Prada-nude.webp", "https://veramar.gt/wp-content/uploads/2024/10/Prada-blanco.webp", "https://veramar.gt/wp-content/uploads/2024/10/Prada-blanco-1.webp"]
+                }
+            ]            
+        },
+        {   
+            "id": 5,
+            "name":"Bolsas",
+            "bg":"white",
+            "product":[
+                {
+                  "id": 1,
+                  "img": ["https://veramar.gt/wp-content/uploads/2024/10/Mochila-mapa1-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Mochila-mapa-768x1152.webp"],
+                  "name": "Mochila Mapa",
+                  "text":"Mochila con mapa de Guatemala en tela de manta.",
+                  "price": 125.00
+                },
+                {
+                  "id": 2,
+                  "img": ["https://veramar.gt/wp-content/uploads/2024/10/Toteg-Bag-pequena_-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Toteg-Bag-pequena_1.webp"],
+                  "name": "Tote Bag Pequena",
+                  "text":"Bolsa sencilla elaborada con tela manta.",
+                  "price": 150.00
+                },
+                {
+                  "id": 3,
+                  "img": ["https://veramar.gt/wp-content/uploads/2024/10/Toteg-Bag-yoga-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Toteg-bag-yoga1.webp"],
+                  "name": "Tote Bag Yoga",
+                  "text":"Bolsa tela de manta con estampado y compartimiento especial para mat de YOGA.",
+                  "price": 175.00
+                }
+              ]
+              
+        }
+    ]
+}
