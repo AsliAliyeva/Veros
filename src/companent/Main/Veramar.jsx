@@ -22,7 +22,7 @@ function Veramar() {
 
   return (
     <div id='veramar'>
-        <div className=' mt-6'>
+        <div className=' mt-6 mini:mb-6 mob:mb-28'>
             <Swiper
                   spaceBetween={30}
                   effect={'fade'}
@@ -45,7 +45,7 @@ function Veramar() {
                   
               <div className='absolute flex flex-col items-end tablet:mr-4 mini:top-[5%] mob:top-[30%] tablet:top-[30%] right-10 z-10'>
                   <h1 style={{ fontFamily: "'Frunchy', sans-serif" }} className='text-white mini:text-[30px] mob:text-[60px] tablet:text-[95px] laptop:text-[150px] '>VERAMAR</h1>
-                  <Link to={"/tienda"} className='bg-[#d0c5ad] mini:text-[10px] mob:text-[16px]  laptop:text-[20px] px-5 py-2 rounded-[5px] border-white hover:bg-[#748371] hover:text-white transition hover:scale-[110%] duration-150'>Ver Tienda</Link>
+                  <Link to={"/tienda"} className='bg-[#d0c5ad] mini:text-[10px] mob:text-[16px]  laptop:text-[16px] px-5 py-2 rounded-[5px] border-white hover:bg-[#748371] hover:text-white transition hover:scale-[110%] duration-150 font-semibold'>Ver Tienda</Link>
               </div>
               </Swiper>
         </div>
@@ -53,7 +53,7 @@ function Veramar() {
           <div className='bg-[#d0c5ad] text-[35px] tablet:text-[55px] px-1 mob:px-10 laptop:px-20 mb-4 text-center mx-auto my-1 '  style={{ fontFamily: "'Frunchy', sans-serif" }}>Descubre Veramar</div>
           <div className='text-[#7a7a7a] font-bold mini:[16px] mob:text-[24px] text-justify'style={{ fontFamily: "'Frunchy', sans-serif" }}>Somos una marca ecológica comprometida con la preservación del medio ambiente y la responsabilidad social. Diseñada por mujeres para mujeres, celebramos la diversidad y fortaleza femenina.</div>
         </div>
-        <div className=' mini:w-[90%] mob:w-[70%] laptop:w-[80%]  mx-auto'>
+        <div className=' mini:w-[90%] mob:w-[70%] laptop:w-[80%]  mx-auto mini:mb-8 tablet:mb-28'>
           <video 
           className='w-full mini:h-[15vh] mob:h-[45vh] laptop:h-[80vh]'
           key={reload}  controls autoPlay loop muted
@@ -85,13 +85,13 @@ function Veramar() {
 
         <div className='mt-28'>
           <div className='bg-[#d0c5ad] mini:w-[85%] tablet:w-[50%] mini:text-[30px] tablet:text-[55px] mb-4 text-center mx-auto my-1 '   style={{ fontFamily: "'Frunchy', sans-serif" }}>Colecciones</div>
-          <div className='w-full desktop:w-[85%] mini:gap-[5px] laptop:gap-[20px] mx-auto mt-12 items-center flex flex-col tablet:flex-row justify-between'>
+          <div className='w-full desktop:w-[85%] mini:gap-[5px] laptop:gap-[20px] mx-auto mt-12 items-center flex mini:flex-col flex-wrap tablet:flex-nowrap tablet:flex-row justify-between'>
           {collec.length > 0 &&  collec.map((item,index)=> {
             
               return (
                 <div key={index} className='relative w-full'>
                   <img className='w-full mini:my-2 mob:my-6 mx-auto mini:object-cover mini:h-[60vh] mob:h-[70vh] laptop:h-[65vh] desktop:h-[80vh]  ' src={item.url} alt="" />
-                  <div className='text-[#f7ede0] mini:text-[25px] mob:text-[30px] laptop:text-[40px] w-full text-center absolute bottom-6 tablet:bottom-4' style={{ fontFamily: "'Frunchy', sans-serif" }}>{item.heading}</div>
+                  <div className='text-[#f7ede0] mini:text-[25px] mob:text-[30px] laptop:text-[40px] w-full text-center font-semibold absolute bottom-6 tablet:bottom-4' style={{ fontFamily: "'Frunchy', sans-serif" }}>{item.heading}</div>
                 </div>
               ) 
             })
@@ -104,14 +104,14 @@ function Veramar() {
         <div className='flex items-center justify-center mt-4 mb-8'><Link to={"/tienda"} className='bg-[#d0c5ad] font-bold px-6 py-2 mini:text-[13px] tablet:text-[18px] rounded-[5px] border-white hover:bg-[#748371] hover:text-white transition duration-150'>Ver Tienda</Link></div>
 
         <div className='my-16'>
-          <div className='bg-[#d0c5ad] mob:mt-16 laptop:mt-28 mini:w-[85%] tablet:w-[45%] mini:text-[30px] tablet:text-[40px] laptop:text-[55px] mb-5 text-center mx-auto  '   style={{ fontFamily: "'Frunchy', sans-serif" }}>Ofertas de Temporada</div>
-          <div className='hidden laptop:flex flex-row items-center justify-between gap-6 w-[80%] mx-auto py-6' style={{ fontFamily: "'Frunchy', sans-serif" }} >
+          <div className='bg-[#d0c5ad] mini:mt-10  laptop:mt-24 mini:w-[85%] tablet:w-[45%] mini:text-[30px] tablet:text-[40px] laptop:text-[55px] mb-10 text-center mx-auto  '   style={{ fontFamily: "'Frunchy', sans-serif" }}>Ofertas de Temporada</div>
+          <div className='hidden laptop:flex flex-row items-center justify-between gap-6 w-[90%] mx-auto py-6' style={{ fontFamily: "'Frunchy', sans-serif" }} >
             {
               ofertas.length > 0 &&  ofertas.map((item,index)=> {
                                 
                 return(
                   <div className='w-[33%]' key={index}>
-              <div className='w-full'><img className='h-[75vh] w-full ' src={item.img[0]} alt="" /></div>
+              <div className='w-full'><img className='h-[75vh] object-cover ' src={item.img[0]} alt="" /></div>
               <div className='flex flex-col font-semibold items-start'>
                 <h3 className='text-[55px]  font-normal text-[#7A7A7A] '>{item.name}</h3>
                 <div className='flex justify-between text-[#748371] text-[30px] '>
@@ -125,7 +125,7 @@ function Veramar() {
                   <p>Q{item.precious}.00  {/* ustuxetli*/}</p>
                   <p>Q{item.current}.00 {/* altixetli*/}</p>
                 </div>
-                <div><button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 text-[26px]  border-white hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</button></div>
+                <div><Link to={`/details/${item.index}`} className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 text-[26px]  border-white hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</Link></div>
               </div>
             </div>
                 )
@@ -157,7 +157,7 @@ function Veramar() {
               ofertas.length > 0 &&  ofertas.map((item,index)=> {
                 return(
                   <SwiperSlide key={index}>
-                  <div><img className='h-[50vh]' src={item.img[0]} alt="" /></div>
+                  <div className=''><img className='object-contain'  src={item.img[0]} alt="" /></div>
                   <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
                     <h3 className='text-[40px]  font-normal text-[#7A7A7A] '>{item.name}</h3>
                     <div className='flex justify-between text-[#748371] mini:text-[20px] mob:text-[25px] '>
@@ -198,7 +198,7 @@ function Veramar() {
                   ofertas.length > 0 &&  ofertas.map((item,index)=> {
                     return(
                       <SwiperSlide key={index}>
-                      <div className='mini:w-[70%]  mx-auto'><img src={item.img[0]} alt="" /></div>
+                      <div className='mini:w-[70%]  mx-auto'><img  src={item.img[0]} alt="" /></div>
                       <div className='flex flex-col  text-[25px] font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
                         <h3 className='mini:text-[30px] mob:text-[50px] font-normal text-[#7A7A7A] '>{item.name}</h3>
                         <div className='flex justify-between text-[#748371] mini:text-[20px] mob:text-[25px] '>

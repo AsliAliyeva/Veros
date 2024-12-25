@@ -1,19 +1,19 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import bottle from '../../img/bottle.webp';
 import { LiaWineBottleSolid } from 'react-icons/lia';
 import { DATA } from '../../Context/DataContex';
+import { Link } from 'react-router-dom';
 
 
 function Tienda() {
     const {tienda} = useContext(DATA)
   return (
-    <div>
-        <div className='flex items-end flex-wrap my-6 laptop:w-[85%] desktop:w-[80%] mx-auto '>
+    <div className=' mini:pb-8 tablet:pb-10'>
+        <div className='flex items-end flex-wrap mt-6 laptop:w-[85%] desktop:w-[80%] mx-auto '>
             <div className='text-[#748371] pl-6 mr-28 mb-4'>
                 <h2 className='mini:text-[28px] mob:text-[35px] laptop:text-[50px] '    style={{ fontFamily: "'Frunchy', sans-serif" }} >Tienda Veramar</h2>
                 <p className='font-semibold mini:text-[12px] tablet:text-[14px]'>Selecciona el producto de tu interés</p>
@@ -42,496 +42,91 @@ function Tienda() {
             </div>
         </div>
         
-        <div id='part1' className='bg-[#f7ede0] py-10 '>
-            <div className='flex gap-6 items-center mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto mt-6 mb-16'>
-                <h2 className='mini:text-[20px] mob:text-[28px] tablet:text-[45px] bg-[#d0c5ad] mini:px-4 tablet:px-16' style={{ fontFamily: "'Frunchy', sans-serif" }} >Dos Piezas</h2>
-                <svg className=' mini:w-[16px] mob:w-[24px] tablet:w-[28px] laptop:w-[30px]'
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 67" fill="none"><g clipPath="url(#clip0_139_321)"><path d="M32.6062 5.20315C32.5662 4.39019 32.6463 3.01177 32.4593 1.64096C32.3142 0.578588 32.6444 -0.0934871 33.9518 0.00932333C34.7324 0.070248 35.5225 0.0226506 36.3089 0.0226506C36.9711 0.0226506 37.3395 0.401526 37.4158 1.00696C37.767 3.82473 38.1201 6.64059 38.2919 9.4774C38.4178 11.5374 38.5763 13.5955 38.6946 15.6555C38.7137 15.9925 38.8702 16.2324 39.0324 16.4914C40.9123 19.5071 42.1224 22.7323 41.9907 26.3383C41.8762 29.4455 40.6738 32.1338 38.582 34.4108C37.9541 35.0943 36.9883 35.2352 36.1314 35.4732C30.9878 36.9049 26.1228 36.2214 21.5766 33.4246C21.1147 33.1409 20.8285 33.1809 20.3933 33.4417C15.2421 36.5432 9.84272 37.0115 4.21435 34.9001C3.82691 34.7554 3.51199 34.5327 3.23907 34.2147C0.925882 31.5131 -0.207809 28.4021 0.0326712 24.8456C0.22162 22.0564 1.15682 19.4748 2.62069 17.1215C3.22571 16.1506 3.39748 15.172 3.43374 14.102C3.55207 10.6407 3.85363 7.19463 4.27733 3.75809C4.38803 2.86517 4.48155 1.97224 4.58843 1.07931C4.67431 0.365352 5.04458 0.0302662 5.76602 0.0226506C6.55235 0.015035 7.33677 0.0226506 8.1231 0.0226506C9.30451 0.0245545 9.65759 0.344409 9.55262 1.49817C9.34459 3.82092 9.34459 6.14748 9.44383 8.47214C9.56407 11.3337 9.95915 14.1572 10.8104 16.9083C10.9134 17.2434 11.0757 17.4243 11.3848 17.5556C14.8107 19.0102 17.8969 20.9845 20.5689 23.5796C20.8933 23.8937 21.0937 23.9108 21.4335 23.5853C24.094 21.015 27.1515 19.0292 30.5622 17.5994C31.045 17.3976 31.1767 17.053 31.2912 16.6437C32.2971 13.0872 32.6578 9.45074 32.6043 5.20315H32.6062ZM31.379 34.1576C32.6998 34.11 34.3259 33.9691 35.889 33.4208C36.3738 33.2513 36.9501 33.2304 37.3051 32.8211C38.7194 31.1894 39.6012 29.3084 39.8779 27.1551C40.2615 24.1679 39.4466 21.4339 38.0857 18.8255C37.3509 17.4147 37.3166 17.3843 35.8069 17.8336C30.4858 19.4195 25.6972 21.9194 21.8572 26.0242C21.2407 26.6829 20.7636 26.6696 20.1223 25.9842C16.0532 21.6376 10.923 19.1492 5.28315 17.5556C4.87281 17.4395 4.63805 17.5766 4.42429 17.9421C3.82309 18.9683 3.28869 20.0212 2.8898 21.1407C1.47937 25.0932 1.67595 28.8438 4.27924 32.3051C4.62087 32.7582 5.00641 33.0724 5.55226 33.2571C6.72412 33.6531 7.92079 33.9558 9.14419 34.0662C13.1655 34.4318 16.8777 33.5369 20.1891 31.1818C20.796 30.7496 21.2922 30.7915 21.8648 31.2009C24.6112 33.1657 27.6936 34.1081 31.3809 34.1557L31.379 34.1576ZM7.43602 6.14368C7.43602 4.9347 7.41693 3.72382 7.44747 2.51485C7.45892 2.09219 7.31387 2.0008 6.92261 2.0008C6.44738 2.0008 6.46646 2.30352 6.43402 2.61385C6.27751 4.11983 6.11147 5.62582 5.95878 7.1318C5.69158 9.7725 5.48546 12.4189 5.40721 15.0729C5.39575 15.4404 5.5389 15.5661 5.84999 15.6517C6.60388 15.8593 7.36158 16.0554 8.09638 16.3181C8.52581 16.4723 8.55253 16.3638 8.45519 15.9906C7.60969 12.7616 7.40166 9.45836 7.43792 6.14368H7.43602ZM33.4708 16.4247C34.4117 16.1582 35.242 15.9088 36.0817 15.6898C36.4749 15.587 36.6333 15.4271 36.6181 14.9682C36.5379 12.5522 36.3337 10.1457 36.1352 7.73914C35.9901 5.97423 35.7477 4.21693 35.5703 2.45393C35.5244 2.01032 35.2592 2.01793 34.9271 2.0027C34.4785 1.98176 34.5702 2.28258 34.5797 2.52437C34.6083 3.28212 34.6751 4.03797 34.6847 4.79572C34.7324 8.68157 34.4537 12.5351 33.4708 16.4266V16.4247Z" fill="#3B4130"></path><path d="M20.9886 67C20.061 67 19.1315 67 18.204 67C17.1886 67 16.9176 66.7753 16.7325 65.7663C16.3985 63.9423 15.845 62.1908 14.9766 60.5477C12.9649 56.7494 9.87879 54.1087 6.01012 52.3267C4.63213 51.6927 3.21215 51.1767 1.71774 50.8683C0.713833 50.6627 0.480988 50.2153 0.673753 49.1662C0.992485 47.4299 1.2845 45.6878 1.58796 43.9495C1.76736 42.9195 2.25978 42.6168 3.23315 42.9329C6.50444 44.0009 9.86543 44.6407 13.2741 45.0785C16.9672 45.5545 20.6718 45.6592 24.3782 45.4669C29.2374 45.2137 34.0298 44.4807 38.6734 42.9595C39.7785 42.5978 40.2441 42.8948 40.4407 44.0524C40.7327 45.7697 41.0362 47.4851 41.3549 49.1986C41.5496 50.2381 41.2977 50.6398 40.267 50.8778C36.1865 51.8202 32.6309 53.7146 29.7394 56.7628C27.3403 59.2949 25.9051 62.3202 25.2905 65.7396C25.113 66.7316 24.8343 67 23.8476 67.0019C22.8952 67.0019 21.9429 67.0019 20.9924 67.0019L20.9886 67ZM20.958 64.959C20.958 64.9762 20.958 64.9933 20.958 65.0104C21.5764 65.0104 22.1967 64.9933 22.8132 65.0161C23.2216 65.0314 23.359 64.8943 23.4564 64.4754C24.279 60.9418 25.9165 57.8366 28.4644 55.2301C31.3178 52.3114 34.778 50.3999 38.6581 49.2119C39.0723 49.0843 39.2574 48.9587 39.1639 48.496C38.973 47.5479 38.8242 46.5902 38.6677 45.6345C38.6066 45.2556 38.4768 45.1395 38.0531 45.2613C36.8717 45.604 35.6788 45.9144 34.4784 46.1752C30.9513 46.9444 27.3804 47.3823 23.7694 47.5327C19.8377 47.6964 15.927 47.5155 12.0355 46.9882C9.29667 46.6188 6.59223 46.0381 3.93741 45.267C3.45836 45.128 3.40873 45.3451 3.35148 45.6669C3.18161 46.6188 3.04038 47.5784 2.84571 48.5246C2.756 48.9663 2.94877 49.0863 3.32285 49.1929C4.99094 49.6727 6.58269 50.3485 8.10954 51.1748C12.9707 53.8079 16.4328 57.6309 18.1486 62.9409C18.3643 63.6092 18.2574 64.584 18.7937 64.8867C19.351 65.2008 20.2232 64.9571 20.958 64.9571V64.959Z" fill="#3B4130"></path></g><defs><clipPath id="clip0_139_321"><rect width="42" height="67" fill="white"></rect></clipPath></defs></svg>
-            </div>
-            <div className='mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto h-[85vh] '>
-                <Swiper
-                slidesPerView={1}
-                spaceBetween={10}
-                navigation={true}
-                pagination={{
-                clickable: true,
-                }}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                  }}
-                breakpoints={{
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 50,
-                },
-                }}
-                modules={[Pagination, Navigation, Autoplay]}
-                className="mySwiper"
-            >
-                {
-                    tienda.length > 0 &&  tienda.map((item,index)=> {
-                        console.log(item);
-                        return(
-                            
-                            <SwiperSlide key={index}>
-                                <div><img className='h-[50vh]' src={item.img} alt="shekil" /></div>
-                                    <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                                    <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                                    <div className='flex justify-between mini:gap-4 mob:gap-10 text-[#748371] mini:text-[14px] mob:text-[18px] '>
-                                        <h6>Recicla</h6>
-                                        <div className='flex items-end'>
-                                        <LiaWineBottleSolid className='mini:text-[20px] mob:text-[25px]' />
-                                        <p>14</p>
+       {
+        tienda.length > 0 &&  tienda.map((item, i)=>{
+            console.log(item.bg);
+            
+            return (
+                <div id={`part${i+1}`} key={i} className={`${item.bg ? `bg-[${item.bg}]` : ''} mini:pt-10 mini:mb-2 mob:mb-14  tablet:pt-20  tablet:mb-36`}>
+                <div className='flex gap-6 items-center mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto mini:mb-6 mini:mt-2 tablet:mt-6 tablet:mb-16'>
+                    <h2 className='mini:text-[20px] mob:text-[28px] tablet:text-[45px] bg-[#d0c5ad] mini:px-4 tablet:px-16' style={{ fontFamily: "'Frunchy', sans-serif" }} >{item.name}</h2>
+                      </div>
+                <div className='mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto mini:h-full mob:h-[85vh] '>
+                    <Swiper
+                    slidesPerView={1}
+                    spaceBetween={10}
+                    navigation={true}
+                    pagination={{
+                    clickable: true,
+                    }}
+                    autoplay={{
+                        delay: 3500,
+                        disableOnInteraction: false,
+                      }}
+                    breakpoints={{
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 40,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 50,
+                    },
+                    }}
+                    modules={[Pagination, Navigation, Autoplay]}
+                    
+                >
+                    {
+                        tienda.length > 0 &&  item.product?.map((elem,index)=> {
+                            return(
+                                <SwiperSlide className='min:w-[80%] ' key={index}>
+                                    <Link className='mini:h-[50vh]' to={`/details/${item.id}/${elem.id}`} ><img className=' mob:h-[70vh] tablet:h-[80vh] object-contain' src={elem.img[0]} alt="shekil" /></Link>
+                                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
+                                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >{elem.name}</h3>
+                                        <div className='flex justify-between mini:gap-4 mob:gap-10 text-[#748371] mini:text-[14px] mob:text-[18px] '>
+                                            <h6>Recicla</h6>
+                                            {
+                                                elem.bottle && (
+                                                    <div className='flex items-end'>
+                                                        <LiaWineBottleSolid className='mini:text-[20px] mob:text-[25px]' />
+                                                        <p>{elem.bottle}</p>
+                                                    </div>
+                                                )
+                                                }
+
+                                            
                                         </div>
+                                        {
+                                            elem.previous ? (
+                                                <div className='text-[#748371] mini:text-[14px] mob:text-[16px] h-[7vh]'>
+                                                <p className='line-through'>Q{elem.previous}.00</p>
+                                                <p className='border-b-2 border-black'>Q{elem.current}.00</p>
+                                                </div>
+                                            ) : (
+                                                <p className='text-[#748371] mini:text-[14px] mob:text-[16px] h-[7vh]'>Q{elem.current}.00</p>
+                                            )
+                                        }
+
+                                        <Link  to={`/details/${item.id}/${elem.id}`}  className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</Link>
                                     </div>
-                                    <div className='text-[#748371] mini:text-[14px] mob:text-[16px]'>
-                                        <p>Q889.00  {/* ustuxetli*/}</p>
-                                        <p>Q399.00 {/* altixetli*/}</p>
-                                    </div>
-                                    <div><button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</button></div>
-                                </div>
-                            </SwiperSlide>
-                        )
-                    })
-                }
-                
-                
-            </Swiper>
-    
-            </div>
-
-            
-        </div>
-
-
-        <div id='part2' className=' my-8'>
-            <div className='flex gap-6 items-center mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto mt-6 mb-16'>
-                <h2 className='mini:text-[20px] mob:text-[28px] tablet:text-[45px] bg-[#d0c5ad] mini:px-4 tablet:px-16' style={{ fontFamily: "'Frunchy', sans-serif" }} >Una Piezas</h2>
-                <svg className=' mini:w-[15px] mob:w-[20px] tablet:w-[25px]'
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 67" fill="none"><g clipPath="url(#clip0_139_324)"><path d="M28.5312 6.56951C28.5922 8.8771 28.6371 11.5344 28.9546 14.1704C29.1287 15.6082 29.536 17.014 29.6024 18.4713C29.7764 22.1972 28.9134 25.7261 27.5192 29.1502C27.0778 30.2347 26.6508 31.3264 26.1609 32.3897C24.9534 35.0097 25.0252 37.6101 26.2596 40.184C26.8338 41.3804 27.4457 42.5644 28.1113 43.7128C29.1915 45.5767 30.1281 47.5008 30.8315 49.5351C31.1832 50.5522 31.0001 50.9533 30.1389 51.6119C26.0174 54.7591 22.497 58.4122 20.3779 63.2102C20.0209 64.0196 19.793 64.8752 19.662 65.7521C19.5508 66.4959 19.0878 66.9591 18.3127 66.9733C16.4107 67.0088 14.5088 67.0017 12.6086 66.9929C11.9232 66.9893 11.498 66.5456 11.4029 65.9456C10.8807 62.6795 9.15283 60.0222 7.10375 57.5353C5.20359 55.2295 3.07556 53.1491 0.620969 51.4113C0.0234698 50.9871 -0.141605 50.4279 0.131127 49.6575C0.803987 47.7582 1.6186 45.921 2.63775 44.1761C3.30882 43.0277 3.91888 41.849 4.53432 40.6721C6.11151 37.6616 6.02 34.7026 4.57021 31.6548C3.31779 29.0224 2.3076 26.2888 1.76752 23.406C1.25615 20.6813 1.25974 17.9672 1.85365 15.262C2.17303 13.8082 2.25736 12.3314 2.33272 10.8599C2.48883 7.80851 2.52113 4.75361 2.49062 1.69872C2.47627 0.491672 2.96611 0.0638802 4.18443 0.0106281C6.82205 -0.104751 6.56367 0.640778 6.89561 2.47975C7.39981 5.27016 7.90939 8.05879 8.91778 10.7285C9.34303 11.8574 10.0069 12.855 10.6439 13.8668C12.2875 16.4779 13.809 19.1548 15.1242 21.9434C15.2032 22.1102 15.2193 22.3499 15.4849 22.3694C15.7253 22.3872 15.7702 22.1954 15.842 22.0375C17.3474 18.7465 19.2368 15.6667 21.1531 12.603C22.3122 10.7498 22.8289 8.68007 23.2919 6.59436C23.692 4.79622 23.9988 2.97677 24.3702 1.17152C24.5425 0.339016 24.9713 0.0230536 25.8236 0.0195035C26.2489 0.0177284 26.6741 0.0106281 27.0994 0.0212785C27.966 0.0443544 28.5186 0.5822 28.5258 1.43956C28.5384 3.03357 28.5294 4.62758 28.5294 6.56596L28.5312 6.56951ZM15.4741 65.39C15.4741 65.39 15.4741 65.3971 15.4741 65.4006C16.0788 65.4006 16.6871 65.358 17.2864 65.4131C17.8605 65.4663 18.1064 65.2675 18.2032 64.7084C18.3809 63.6824 18.7541 62.7114 19.2188 61.7813C21.4796 57.2406 24.8673 53.6372 28.8596 50.554C29.2687 50.238 29.3099 49.9913 29.1305 49.5812C28.786 48.7913 28.5097 47.9677 28.1167 47.2026C27.0958 45.2128 26.0048 43.2584 24.9821 41.2686C23.3636 38.116 23.1681 34.928 24.7094 31.6583C25.5563 29.862 26.3081 28.0141 26.8822 26.1095C27.7955 23.0812 28.3733 20.0032 27.7471 16.8418C27.033 13.242 26.9343 9.60488 26.9235 5.95889C26.9199 4.67551 26.9002 3.39036 26.8984 2.10699C26.8984 1.7999 26.8535 1.59754 26.4642 1.60997C26.1484 1.62062 25.9026 1.62062 25.8505 2.02711C25.6585 3.51106 25.3589 4.9755 25.0377 6.43638C24.4384 9.16111 23.6848 11.8202 22.1184 14.2005C20.3259 16.9253 18.7236 19.7618 17.3492 22.7191C16.9849 23.5054 16.4197 24.0415 15.5172 24.0468C14.577 24.0522 14.019 23.4735 13.6493 22.6729C12.4705 20.1168 11.0781 17.6726 9.59243 15.2798C8.82268 14.039 7.97936 12.8355 7.44287 11.4616C6.28376 8.48836 5.71497 5.37311 5.19103 2.25077C5.11747 1.80877 5.02058 1.56914 4.50382 1.60287C3.90811 1.64014 4.12522 2.06261 4.12163 2.33419C4.09293 4.5264 4.13061 6.71862 4.06242 8.90905C3.99424 11.1137 3.98527 13.3414 3.50081 15.5017C2.84769 18.4092 2.94278 21.2724 3.60667 24.1516C4.22391 26.8302 5.31843 29.3365 6.38783 31.8536C7.11451 33.5648 7.55591 35.3097 7.32624 37.193C7.11093 38.9539 6.44704 40.5514 5.6432 42.1046C4.3513 44.5986 2.8118 46.9665 1.8698 49.6362C1.72267 50.0534 1.78188 50.2575 2.11562 50.5025C3.8489 51.7699 5.41353 53.2254 6.86152 54.7981C9.17795 57.3152 11.2127 60.0151 12.422 63.251C12.6858 63.9575 12.5476 64.9959 13.1649 65.3225C13.7749 65.6438 14.6936 65.3935 15.4759 65.3935L15.4741 65.39Z" fill="#3B4130"></path></g><defs><clipPath id="clip0_139_324"><rect width="31" height="67" fill="white"></rect></clipPath></defs></svg>
-            </div>
-            <div className='mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto h-[85vh] '>
-                <Swiper
-                slidesPerView={1}
-                spaceBetween={10}
-                navigation={true}
-                pagination={{
-                clickable: true,
-                }}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                  }}
-                breakpoints={{
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 50,
-                },
-                }}
-                modules={[Pagination, Navigation, Autoplay]}
-                className="mySwiper"
-            >
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='flex justify-between mini:gap-4 mob:gap-10 text-[#748371] mini:text-[14px] mob:text-[18px] '>
-                            <h6>Recicla</h6>
-                            <div className='flex items-end'>
-                            <LiaWineBottleSolid className='mini:text-[20px] mob:text-[25px]' />
-                            <p>14</p>
-                            </div>
-                        </div>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px]'>
-                            <p>Q889.00  {/* ustuxetli*/}</p>
-                            <p>Q399.00 {/* altixetli*/}</p>
-                        </div>
-                        <div><button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</button></div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='flex justify-between mini:gap-4 mob:gap-10 text-[#748371] mini:text-[14px] mob:text-[18px] '>
-                            <h6>Recicla</h6>
-                            <div className='flex items-end'>
-                            <LiaWineBottleSolid className='mini:text-[20px] mob:text-[25px]' />
-                            <p>14</p>
-                            </div>
-                        </div>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px]'>
-                            <p>Q889.00  {/* ustuxetli*/}</p>
-                            <p>Q399.00 {/* altixetli*/}</p>
-                        </div>
-                        <div><button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</button></div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='flex justify-between mini:gap-4 mob:gap-10 text-[#748371] mini:text-[14px] mob:text-[18px] '>
-                            <h6>Recicla</h6>
-                            <div className='flex items-end'>
-                            <LiaWineBottleSolid className='mini:text-[20px] mob:text-[25px]' />
-                            <p>14</p>
-                            </div>
-                        </div>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px]'>
-                            <p>Q889.00  {/* ustuxetli*/}</p>
-                            <p>Q399.00 {/* altixetli*/}</p>
-                        </div>
-                        <div><button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</button></div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='flex justify-between mini:gap-4 mob:gap-10 text-[#748371] mini:text-[14px] mob:text-[18px] '>
-                            <h6>Recicla</h6>
-                            <div className='flex items-end'>
-                            <LiaWineBottleSolid className='mini:text-[20px] mob:text-[25px]' />
-                            <p>14</p>
-                            </div>
-                        </div>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px]'>
-                            <p>Q889.00  {/* ustuxetli*/}</p>
-                            <p>Q399.00 {/* altixetli*/}</p>
-                        </div>
-                        <div><button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</button></div>
-                    </div>
-                </SwiperSlide>
-                
-            </Swiper>
-    
-            </div>            
-        </div>
-       
-        <div id='part3' className='bg-[#f7ede0] py-10'>
-            <div className='flex gap-6 items-center mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto mt-6 mb-16'>
-                <h2 className='mini:text-[20px] mob:text-[28px] tablet:text-[45px] bg-[#d0c5ad] mini:px-4 tablet:px-16' style={{ fontFamily: "'Frunchy', sans-serif" }} >Salidas de Baño</h2>
-                <svg className=' mini:w-[15px] mob:w-[22px] tablet:w-[35px]'
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 67" fill="none"><g clipPath="url(#clip0_139_326)"><path d="M22.47 67.0001C17.3407 67.0001 12.2113 67.0001 7.08198 67.0001C6.08878 67.0001 5.72643 66.7166 5.52366 65.771C4.51731 61.047 3.59921 56.3062 2.82005 51.5393C2.17231 47.5855 1.60155 43.6224 1.13218 39.6443C0.349257 33.0087 -0.142649 26.3618 0.0375911 19.6814C0.155874 15.2781 0.565169 10.9029 1.98644 6.68796C2.75246 4.41826 3.80199 2.31268 5.56496 0.617398C6.11695 0.0858741 6.67832 -0.0540006 7.46124 0.0896041C11.6725 0.863578 15.8969 1.57228 20.1513 2.08329C22.6127 2.37795 25.0403 2.06464 27.4735 1.7308C30.2147 1.35594 32.9427 0.908337 35.667 0.425303C36.2847 0.315269 36.9211 0.274239 37.5163 0.0933341C38.3574 -0.164035 38.9545 0.139959 39.5252 0.705053C41.2244 2.38914 42.2683 4.44997 43.0099 6.67677C44.1908 10.2184 44.6302 13.885 44.8573 17.5945C45.0826 21.2704 45.0207 24.9407 44.8329 28.611C44.694 31.3246 44.4556 34.0325 44.1908 36.7387C43.9055 39.6443 43.5581 42.5444 43.1376 45.4314C42.6194 48.9786 42.0223 52.5165 41.4065 56.0488C40.8508 59.2342 40.2086 62.4047 39.5102 65.564C39.2361 66.8061 39.0164 67.0038 37.7191 67.0038C32.6367 67.0038 27.5543 67.0038 22.4719 67.0038L22.47 67.0001ZM19.0605 64.7714C22.5977 64.7714 26.1349 64.7416 29.6702 64.7938C30.4456 64.805 30.6803 64.5607 30.8174 63.8482C31.497 60.3346 32.2142 56.8284 32.815 53.2998C33.3633 50.0846 33.8683 46.8637 34.3152 43.6335C34.6606 41.1289 34.9404 38.6186 35.2032 36.1045C35.4924 33.3313 35.7045 30.5506 35.8453 27.768C36.0688 23.3741 36.065 18.982 35.575 14.6011C35.314 12.255 34.9197 9.93492 34.21 7.67268C34.0786 7.25492 33.9415 7.13556 33.4872 7.23254C31.6904 7.61673 29.888 7.97481 28.0781 8.29932C25.3595 8.78795 22.6296 9.16095 19.8584 8.75251C15.2792 8.07738 10.7563 7.13183 6.26527 6.03148C4.74637 5.65848 4.74449 5.64543 4.22818 7.15421C2.69614 11.6246 2.36945 16.2722 2.27745 20.9365C2.17607 26.0988 2.54781 31.2425 3.06788 36.3787C3.36453 39.303 3.70999 42.2217 4.11741 45.133C4.51168 47.9454 5.02987 50.741 5.48423 53.546C6.0625 57.1156 6.78722 60.6591 7.51756 64.2007C7.60768 64.639 7.76164 64.7845 8.23665 64.7826C11.8433 64.7583 15.45 64.7695 19.0567 64.7714H19.0605ZM42.7621 22.8407C42.6926 19.3643 42.5968 15.957 42.0561 12.572C41.7125 10.4198 41.2413 8.31051 40.4508 6.2702C40.2612 5.78157 40.0359 5.72376 39.5816 5.84685C38.6409 6.10422 37.6928 6.34853 36.7353 6.52198C36.2659 6.6059 36.3034 6.79054 36.4086 7.12624C37.721 11.274 38.1002 15.5579 38.2204 19.8679C38.318 23.3778 38.2204 26.8859 37.9819 30.3921C37.7848 33.2884 37.5276 36.1773 37.2084 39.0587C36.9099 41.7723 36.51 44.4747 36.1213 47.177C35.6876 50.1983 35.1807 53.2066 34.6268 56.2092C34.1368 58.8668 33.643 61.5226 33.0535 64.1597C32.9465 64.639 33.0948 64.8031 33.6036 64.7826C34.5386 64.7434 35.483 64.7061 36.4105 64.7901C37.1934 64.8609 37.4299 64.5607 37.5614 63.8464C38.2204 60.2618 38.9714 56.696 39.606 53.1077C40.1486 50.0361 40.6198 46.9495 41.0479 43.8592C41.4628 40.8528 41.7895 37.8353 42.0805 34.8121C42.4654 30.808 42.6475 26.7945 42.7621 22.8388V22.8407ZM22.532 6.70288C24.6798 6.59844 26.7714 6.24409 28.8573 5.8599C32.1241 5.25937 35.3609 4.51711 38.5959 3.76551C38.7536 3.72821 38.9357 3.71702 38.9019 3.47644C38.8456 3.06054 37.9068 2.33133 37.5163 2.4022C34.0542 3.02697 30.5752 3.53985 27.1037 4.09002C23.4181 4.67377 19.7889 4.39961 16.1522 3.8569C13.4167 3.44846 10.683 3.00086 7.97004 2.4712C7.1721 2.31641 6.76093 2.58683 6.32723 3.13328C6.00805 3.53612 6.02683 3.65548 6.56567 3.78416C9.46266 4.47048 12.3653 5.12136 15.2867 5.68646C17.6899 6.15084 20.1006 6.58539 22.532 6.69915V6.70288Z" fill="#3B4130"></path></g><defs><clipPath id="clip0_139_326"><rect width="45" height="67" fill="white"></rect></clipPath></defs></svg>
-            </div>
-            <div className='mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto h-[85vh] '>
-                <Swiper
-                slidesPerView={1}
-                spaceBetween={10}
-                navigation={true}
-                pagination={{
-                clickable: true,
-                }}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                  }}
-                breakpoints={{
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 50,
-                },
-                }}
-                modules={[Pagination, Navigation, Autoplay]}
-                className="mySwiper"
-            >
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='flex justify-between mini:gap-4 mob:gap-10 text-[#748371] mini:text-[14px] mob:text-[18px] '>
-                            <h6>Recicla</h6>
-                            <div className='flex items-end'>
-                            <LiaWineBottleSolid className='mini:text-[20px] mob:text-[25px]' />
-                            <p>14</p>
-                            </div>
-                        </div>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px]'>
-                            <p>Q889.00</p>
-                        </div>
-                        <div className=' flex justify-between items-center gap-6'>
-                            <div className='border border-black rounded bg-white px-4 py-2'><span className='text-[#748371]'>1</span></div>
-                            <button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white border rounded hover:bg-[#748371] hover:text-white transition duration-150'>Añadir al carrito</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='flex justify-between mini:gap-4 mob:gap-10 text-[#748371] mini:text-[14px] mob:text-[18px] '>
-                            <h6>Recicla</h6>
-                            <div className='flex items-end'>
-                            <LiaWineBottleSolid className='mini:text-[20px] mob:text-[25px]' />
-                            <p>14</p>
-                            </div>
-                        </div>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px]'>
-                            <p>Q889.00</p>
-                        </div>
-                        <div className=' flex justify-between items-center gap-6'>
-                            <div className='border border-black rounded bg-white px-4 py-2'><span className='text-[#748371]'>1</span></div>
-                            <button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white border rounded hover:bg-[#748371] hover:text-white transition duration-150'>Añadir al carrito</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='flex justify-between mini:gap-4 mob:gap-10 text-[#748371] mini:text-[14px] mob:text-[18px] '>
-                            <h6>Recicla</h6>
-                            <div className='flex items-end'>
-                            <LiaWineBottleSolid className='mini:text-[20px] mob:text-[25px]' />
-                            <p>14</p>
-                            </div>
-                        </div>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px]'>
-                            <p>Q889.00</p>
-                        </div>
-                        <div className=' flex justify-between items-center gap-6'>
-                            <div className='border border-black rounded bg-white px-4 py-2'><span className='text-[#748371]'>1</span></div>
-                            <button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white border rounded hover:bg-[#748371] hover:text-white transition duration-150'>Añadir al carrito</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='flex justify-between mini:gap-4 mob:gap-10 text-[#748371] mini:text-[14px] mob:text-[18px] '>
-                            <h6>Recicla</h6>
-                            <div className='flex items-end'>
-                            <LiaWineBottleSolid className='mini:text-[20px] mob:text-[25px]' />
-                            <p>14</p>
-                            </div>
-                        </div>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px]'>
-                            <p>Q889.00</p>
-                        </div>
-                        <div className=' flex justify-between items-center gap-6'>
-                            <div className='border border-black rounded bg-white px-4 py-2'><span className='text-[#748371]'>1</span></div>
-                            <button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white border rounded hover:bg-[#748371] hover:text-white transition duration-150'>Añadir al carrito</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                
-                
-            </Swiper>
-    
-            </div>
-
-            
-        </div>
+                                </SwiperSlide>
+                            )
+                        })
+                    }
+                    
+                </Swiper>
         
-        <div id='part4' className='flex gap-6 items-center mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto mt-6 mb-16'>
-            <h2 className='mini:text-[16px] mob:text-[28px] tablet:text-[45px] bg-[#d0c5ad] mini:px-4 tablet:px-16' style={{ fontFamily: "'Frunchy', sans-serif" }} >Accesorios</h2>
-            <svg className=' mini:w-[20px] mob:w-[26px] tablet:w-[45px]'
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 67" fill="none"><g clipPath="url(#clip0_139_319)"><path d="M32.5501 0C33.5045 0.341918 34.5072 0.527874 35.4153 1.01976C37.61 2.20947 39.253 3.97105 40.6745 5.96058C43.2981 9.6337 44.9773 13.7627 46.4915 17.9657C46.9385 19.2074 47.3331 20.4711 47.7036 21.7368C47.8405 22.2067 48.0741 22.3227 48.5412 22.3207C51.5916 22.3007 54.6421 22.3167 57.6945 22.3127C59.5852 22.3127 61.1698 22.9105 62.249 24.5421C63.0323 25.7259 63.0866 27.0435 62.9296 28.3772C62.6135 31.0686 62.2531 33.7559 61.9087 36.4453C61.5765 39.0487 61.2383 41.6501 60.9101 44.2534C60.6241 46.5349 60.3563 48.8203 60.0704 51.1038C59.7865 53.3613 59.4785 55.6167 59.1946 57.8762C59.0194 59.2738 58.9187 60.6815 58.6147 62.0612C58.0368 64.6746 55.4233 66.838 52.7232 66.954C52.395 66.968 52.0648 66.964 51.7366 66.964C39.0939 66.964 26.4512 66.906 13.8106 67.002C10.2769 67.028 6.84994 64.7645 6.18951 60.4596C5.69822 57.2543 4.99552 54.0831 4.39751 50.8938C3.8136 47.7886 3.25184 44.6813 2.6639 41.5761C2.0216 38.1769 1.31486 34.7897 0.726924 31.3825C0.432955 29.6829 -0.1127 28.0113 0.0242171 26.2497C0.177242 24.2582 2.05583 22.4526 4.06931 22.3707C7.4258 22.2367 10.7823 22.3367 14.1388 22.3247C14.628 22.3247 14.8616 22.2167 15.0106 21.7108C16.2106 17.6438 17.6785 13.6747 19.6376 9.90364C21.1135 7.06431 22.839 4.39695 25.3539 2.32345C26.6727 1.2357 28.1486 0.45989 29.844 0.129969C29.9185 0.115972 29.9829 0.045989 30.0514 0.00199952C30.8849 0.00199952 31.7205 0.00199952 32.5541 0.00199952L32.5501 0ZM49.1593 25.106C49.5077 25.3419 49.8721 25.4579 50.2124 25.6379C51.7749 26.4637 52.7031 28.2812 52.397 29.9588C52.0648 31.7884 50.4882 33.2901 48.7184 33.464C46.8237 33.65 45.0257 32.6082 44.3229 30.9146C43.6082 29.193 44.0672 27.3135 45.5008 26.1398C45.7525 25.9338 45.9559 25.7479 45.8391 25.3799C45.7102 24.972 45.382 25.114 45.1263 25.114C35.973 25.108 26.8217 25.108 17.6684 25.118C17.3986 25.118 17.0261 24.936 16.8912 25.3779C16.7724 25.7618 16.9959 25.9658 17.2677 26.1897C18.0953 26.8696 18.5745 27.7634 18.7013 28.8151C18.9349 30.7707 17.7208 32.6322 15.8603 33.2401C13.9092 33.8779 11.8575 33.1281 10.8648 31.4165C9.85003 29.6649 10.1843 27.5494 11.6823 26.1877C12.2038 25.7139 12.834 25.4459 13.4884 25.18C13.3817 25.124 13.285 25.106 13.1864 25.106C10.3997 25.106 7.61104 25.106 4.82437 25.112C4.58678 25.112 4.34516 25.156 4.1116 25.208C3.18137 25.4199 2.66189 26.1798 2.83102 27.0975C3.43305 30.3508 4.04918 33.602 4.64114 36.8552C4.73578 37.3791 4.92907 37.567 5.51298 37.565C23.0283 37.547 40.5436 37.551 58.059 37.553C58.961 37.553 58.9268 37.551 59.0335 36.6313C59.3013 34.3258 59.6013 32.0224 59.8912 29.7209C59.9919 28.9251 60.1188 28.1313 60.1953 27.3335C60.3181 26.0438 59.3556 25.118 57.8677 25.11C55.2783 25.096 52.687 25.104 50.0976 25.102C49.7855 25.102 49.4734 25.102 49.1593 25.102V25.106ZM31.9964 40.3984C23.3485 40.3984 14.7025 40.4044 6.05461 40.3864C5.49889 40.3864 5.31969 40.5083 5.42842 41.0702C6.0526 44.2974 6.66268 47.5287 7.25868 50.7619C7.36136 51.3197 7.54057 51.5537 8.203 51.5537C24.18 51.5277 40.1591 51.5337 56.1361 51.5337C56.3555 51.5337 56.575 51.5237 56.7945 51.5337C57.0703 51.5497 57.165 51.4357 57.1972 51.1598C57.3583 49.7581 57.5415 48.3585 57.7187 46.9588C57.9663 45.0213 58.208 43.0837 58.4717 41.1502C58.5744 40.4024 58.5925 40.3964 57.8053 40.3964C49.2016 40.3964 40.598 40.3964 31.9944 40.3964L31.9964 40.3984ZM32.4434 54.327C32.2461 54.325 32.0487 54.325 31.8514 54.325C24.1901 54.325 16.5308 54.325 8.86947 54.331C7.93924 54.331 7.95736 54.341 8.13253 55.2188C8.42851 56.7025 8.69027 58.1941 8.98021 59.6798C9.15337 60.5675 9.22988 61.4873 9.77755 62.2651C10.7541 63.6508 12.1112 64.1867 13.7924 64.1827C21.3873 64.1587 28.9822 64.1747 36.5771 64.1747C41.7135 64.1747 46.8499 64.1787 51.9863 64.1707C54.2374 64.1667 55.7898 62.791 56.0072 60.7015C56.2045 58.802 56.4321 56.9044 56.716 55.0169C56.8005 54.461 56.7502 54.315 56.1522 54.317C48.2492 54.337 40.3483 54.329 32.4454 54.329L32.4434 54.327ZM31.3339 22.3167V22.3227C35.6368 22.3227 39.9376 22.3267 44.2404 22.3147C44.5223 22.3147 45.0317 22.5186 44.8102 21.8348C43.4169 17.5258 41.8806 13.2748 39.5308 9.36776C38.504 7.66217 37.3603 6.04056 35.828 4.72887C34.6985 3.7611 33.4602 3.02128 31.9319 2.87131C29.9567 2.67736 28.3459 3.45717 26.9123 4.70688C24.7619 6.58043 23.3263 8.97586 22.0316 11.4553C20.3242 14.7205 19.102 18.1817 17.9624 21.6748C17.7872 22.2127 17.8617 22.3327 18.4295 22.3287C22.7303 22.3107 27.0331 22.3187 31.336 22.3187L31.3339 22.3167ZM15.8462 29.275C15.8381 28.4892 15.2643 27.9473 14.4569 27.9613C13.6676 27.9753 13.134 28.5492 13.1542 29.359C13.1743 30.1108 13.7421 30.6527 14.5072 30.6507C15.2905 30.6507 15.8543 30.0708 15.8442 29.275H15.8462ZM46.87 29.303C46.87 30.0928 47.4439 30.6607 48.2331 30.6527C48.9922 30.6447 49.55 30.0908 49.562 29.329C49.5761 28.5272 49.0265 27.9613 48.2291 27.9533C47.4298 27.9473 46.868 28.5032 46.868 29.301L46.87 29.303Z" fill="#3B4130"></path></g><defs><clipPath id="clip0_139_319"><rect width="63" height="67" fill="white"></rect></clipPath></defs></svg>
-        </div>
-
-        <div className='py-10'>
-            <div className='flex gap-6 items-center mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto mt-6 mb-16'>
-                <h2 className='mini:text-[20px] mob:text-[28px] tablet:text-[45px] bg-[#d0c5ad] mini:px-4 tablet:px-16' style={{ fontFamily: "'Frunchy', sans-serif" }} >Lentes</h2>
-              </div>
-            <div className='mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto h-[85vh] '>
-                <Swiper
-                slidesPerView={1}
-                spaceBetween={10}
-                navigation={true}
-                pagination={{
-                clickable: true,
-                }}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                  }}
-                breakpoints={{
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 50,
-                },
-                }}
-                modules={[Pagination, Navigation, Autoplay]}
-                className="mySwiper"
-            >
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px] mb-3'>
-                            <p>Q889.00</p>
-                        </div>
-                        <div className=' flex justify-between items-center gap-6'><button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white border rounded hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</button></div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px] mb-3'>
-                            <p>Q889.00</p>
-                        </div>
-                        <div className=' flex justify-between items-center gap-6'><button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white border rounded hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</button></div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px] mb-3'>
-                            <p>Q889.00</p>
-                        </div>
-                        <div className=' flex justify-between items-center gap-6'><button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white border rounded hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</button></div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px] mb-3'>
-                            <p>Q889.00</p>
-                        </div>
-                        <div className=' flex justify-between items-center gap-6'><button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white border rounded hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</button></div>
-                    </div>
-                </SwiperSlide>
-
+                </div>
                 
-                
-            </Swiper>
-    
             </div>
+            )
+        })
+       }
         </div>
-
-        <div className='py-10'>
-            <div className='flex gap-6 items-center mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto mt-6 mb-16'>
-                <h2 className='mini:text-[20px] mob:text-[28px] tablet:text-[45px] bg-[#d0c5ad] mini:px-4 tablet:px-16' style={{ fontFamily: "'Frunchy', sans-serif" }} >Bolsas</h2>
-            </div>
-            <div className='mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto h-[85vh] '>
-                <Swiper
-                slidesPerView={1}
-                spaceBetween={10}
-                navigation={true}
-                pagination={{
-                clickable: true,
-                }}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                  }}
-                breakpoints={{
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 50,
-                },
-                }}
-                modules={[Pagination, Navigation, Autoplay]}
-                className="mySwiper"
-            >
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px] mb-4'>
-                            <p>Q889.00</p>
-                        </div>
-                        <div className=' flex justify-between items-center gap-6'>
-                            <div className='border border-black rounded bg-white px-4 py-2'><span className='text-[#748371]'>1</span></div>
-                            <button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white border rounded hover:bg-[#748371] hover:text-white transition duration-150'>Añadir al carrito</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px] mb-4'>
-                            <p>Q889.00</p>
-                        </div>
-                        <div className=' flex justify-between items-center gap-6'>
-                            <div className='border border-black rounded bg-white px-4 py-2'><span className='text-[#748371]'>1</span></div>
-                            <button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white border rounded hover:bg-[#748371] hover:text-white transition duration-150'>Añadir al carrito</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px] mb-4'>
-                            <p>Q889.00</p>
-                        </div>
-                        <div className=' flex justify-between items-center gap-6'>
-                            <div className='border border-black rounded bg-white px-4 py-2'><span className='text-[#748371]'>1</span></div>
-                            <button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white border rounded hover:bg-[#748371] hover:text-white transition duration-150'>Añadir al carrito</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div><img className='h-[50vh]' src={bottle} alt="shekil" /></div>
-                        <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
-                        <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >Versaffes</h3>
-                        <div className='text-[#748371] mini:text-[14px] mob:text-[16px] mb-4'>
-                            <p>Q889.00</p>
-                        </div>
-                        <div className=' flex justify-between items-center gap-6'>
-                            <div className='border border-black rounded bg-white px-4 py-2'><span className='text-[#748371]'>1</span></div>
-                            <button className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white border rounded hover:bg-[#748371] hover:text-white transition duration-150'>Añadir al carrito</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-                
-                
-                
-            </Swiper>
-    
-            </div>
-
-            
-        </div>
-    </div>
   )
 }
 
