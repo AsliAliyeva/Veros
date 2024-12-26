@@ -11,7 +11,7 @@ function Details() {
     if (tienda.length > 0) {
          
         const elemet = tienda[index - 1].product[id - 1]
-        console.log(elemet.img)
+        // console.log(elemet.img)
 
         return (
             <>

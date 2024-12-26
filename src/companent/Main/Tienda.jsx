@@ -7,11 +7,17 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { LiaWineBottleSolid } from 'react-icons/lia';
 import { DATA } from '../../Context/DataContex';
 import { Link } from 'react-router-dom';
+import { BASKET } from '../../Context/BasketContext';
 
 
 function Tienda() {
     const {tienda} = useContext(DATA)
-  return (
+    const {addToBasket} = useContext(BASKET)
+    const[ count, setCount] = useState(1)
+    
+
+
+    return (
     <div className=' mini:pb-8 tablet:pb-10'>
         <div className='flex items-end flex-wrap mt-6 laptop:w-[85%] desktop:w-[80%] mx-auto '>
             <div className='text-[#748371] pl-6 mr-28 mb-4'>
@@ -44,8 +50,18 @@ function Tienda() {
         
        {
         tienda.length > 0 &&  tienda.map((item, i)=>{
-            console.log(item.bg);
-            
+            //   console.log(item);
+            function inc(name) {
+                const prod = item.product.find( mehsul => mehsul.name == name)
+                if(!prod.count){
+                    prod.count = 1
+                }else{
+                    prod.count +=1
+                }
+                console.log(prod.count);
+                
+            }
+        
             return (
                 <div id={`part${i+1}`} key={i} className={`${item.bg ? `bg-[${item.bg}]` : ''} mini:pt-10 mini:mb-2 mob:mb-14  tablet:pt-20  tablet:mb-36`}>
                 <div className='flex gap-6 items-center mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto mini:mb-6 mini:mt-2 tablet:mt-6 tablet:mb-16'>
@@ -60,7 +76,7 @@ function Tienda() {
                     clickable: true,
                     }}
                     autoplay={{
-                        delay: 3500,
+                        delay: 90000,
                         disableOnInteraction: false,
                       }}
                     breakpoints={{
@@ -82,6 +98,14 @@ function Tienda() {
                 >
                     {
                         tienda.length > 0 &&  item.product?.map((elem,index)=> {
+                            
+                           
+                            function dec(name) {
+                                console.log(elem.name);
+                                
+                            }
+                             
+                            
                             return(
                                 <SwiperSlide className='min:w-[80%] ' key={index}>
                                     <Link className='mini:h-[50vh]' to={`/details/${item.id}/${elem.id}`} ><img className=' mob:h-[70vh] tablet:h-[80vh] object-contain' src={elem.img[0]} alt="shekil" /></Link>
@@ -111,7 +135,33 @@ function Tienda() {
                                             )
                                         }
 
-                                        <Link  to={`/details/${item.id}/${elem.id}`}  className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</Link>
+                                            
+                                                {/* <Link  to={`/details/${item.id}/${elem.id}`}  className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</Link> */}
+                                            <div className=''>
+                                                <div className='flex justify-between items-center'>
+                                                    <button 
+                                                    onClick={(e)=> {
+                                                        e.preventDefault()
+                                                        inc(elem.name)
+                                                        
+                                                        
+                                                    }}>+</button>
+                                                    <p>{elem.count ? elem.count : 1}</p>
+                                                    <button 
+                                                    onClick={(e)=> {
+                                                        e.preventDefault()
+                                                        dec(elem.name)
+                                                    }}>-</button>
+                                                </div>
+                                                <button  
+                                                onClick={(e)=>{
+                                                    e.preventDefault()
+                                                    addToBasket(elem.id, elem.img[0], elem.name, elem.current, elem.size, elem.color)
+                                                }}
+                                                className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 mini:text-[12px] mob:text-[14px] tablet:text-[16px] desktop:text-[18px] mob:my-2 border-white hover:bg-[#748371] hover:text-white transition duration-150'>Sebete at</button>
+                                            </div>
+                                            
+                                        
                                     </div>
                                 </SwiperSlide>
                             )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useContext } from 'react'
 import logo from '../../img/logo.webp'
 import veramar from '../../img/veramar.png'
 import { FaBars, FaRegUser } from 'react-icons/fa'
@@ -8,6 +8,7 @@ import { useState } from "react";
 import { IoMdClose } from 'react-icons/io'
 import { Link, NavLink } from 'react-router-dom'
 import { IoCloseSharp } from "react-icons/io5";
+import { BASKET } from '../../Context/BasketContext'
 
  
 
@@ -15,6 +16,7 @@ function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isBasket, setBasket] = useState(false);
+  const {sebet} = useContext( BASKET)
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -75,9 +77,22 @@ function Header() {
 
         <div className="p-6">
           <h3 className="text-xl font-semibold">Basket</h3>
-          <p>Item 1</p>
-          <p>Item 2</p>
-          <p>Item 3</p>
+          <div>
+          {
+            sebet && sebet.map((item, i)=> {
+              
+              
+              return(
+                <div key={i}>
+                  <div><img className='h-[10vh]' src={item.img} alt="" /></div>
+                  <div>
+                    <p>{item.name}</p>           
+                  </div>
+                </div>
+              )
+            })
+          }
+         </div>
         </div>
       </div>
 
