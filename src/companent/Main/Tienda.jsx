@@ -50,7 +50,7 @@ function Tienda() {
         
        {
         tienda.length > 0 &&  tienda.map((item, i)=>{
-            //   console.log(item);
+
             function inc(name) {
                 const prod = item.product.find( mehsul => mehsul.name == name)
                 if(!prod.count){
@@ -63,7 +63,7 @@ function Tienda() {
             }
         
             return (
-                <div id={`part${i+1}`} key={i} className={`${item.bg ? `bg-[${item.bg}]` : ''} mini:pt-10 mini:mb-2 mob:mb-14  tablet:pt-20  tablet:mb-36`}>
+                <div id={`part${i+1}`} key={i} className={`${item.name === "DosPiezas" || item.name ==="Salidas" ? "bg-[#f7ede0]" : ""} mini:pt-6 mob:pb-20  tablet:pb-48 mini:mb-4  mob:mb-10`}>
                 <div className='flex gap-6 items-center mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto mini:mb-6 mini:mt-2 tablet:mt-6 tablet:mb-16'>
                     <h2 className='mini:text-[20px] mob:text-[28px] tablet:text-[45px] bg-[#d0c5ad] mini:px-4 tablet:px-16' style={{ fontFamily: "'Frunchy', sans-serif" }} >{item.name}</h2>
                       </div>
@@ -108,7 +108,7 @@ function Tienda() {
                             
                             return(
                                 <SwiperSlide className='min:w-[80%] ' key={index}>
-                                    <Link className='mini:h-[50vh]' to={`/details/${item.id}/${elem.id}`} ><img className=' mob:h-[70vh] tablet:h-[80vh] object-contain' src={elem.img[0]} alt="shekil" /></Link>
+                                    <Link className='mini:h-[50vh]' to={`/details/${item.name}/${item.id}/${elem.id}`} ><img className=' mob:h-[70vh] tablet:h-[80vh] object-contain' src={elem.img[0]} alt="shekil" /></Link>
                                         <div className='flex flex-col font-semibold items-start mini:pl-[20px] mob:pl-12 tablet:pl-0'>
                                         <h3 className='mini:text-[30px] tablet:text-[50px]  font-normal text-[#7A7A7A]' style={{ fontFamily: "'Frunchy', sans-serif" }} >{elem.name}</h3>
                                         <div className='flex justify-between mini:gap-4 mob:gap-10 text-[#748371] mini:text-[14px] mob:text-[18px] '>

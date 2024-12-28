@@ -108,6 +108,7 @@ function Veramar() {
           <div className='hidden laptop:flex flex-row items-center justify-between gap-6 w-[90%] mx-auto py-6' style={{ fontFamily: "'Frunchy', sans-serif" }} >
             {
               ofertas.length > 0 &&  ofertas.map((item,index)=> {
+                     console.log(item);
                                 
                 return(
                   <div className='w-[33%]' key={index}>
@@ -122,10 +123,10 @@ function Veramar() {
                   </div>
                 </div>
                 <div className='text-[#748371] text-[30px]'>
-                  <p>Q{item.precious}.00  {/* ustuxetli*/}</p>
+                  <p>Q{item.previous}.00  {/* ustuxetli*/}</p>
                   <p>Q{item.current}.00 {/* altixetli*/}</p>
                 </div>
-                <div><Link to={`/details/${item.index}`} className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 text-[26px]  border-white hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</Link></div>
+                <div><Link to={`/details/${item.name}/${index}/${item.id}`} className='bg-[#d0c5ad] text-[#788573] font-bold px-2 py-1 text-[26px]  border-white hover:bg-[#748371] hover:text-white transition duration-150'>Seleccionar opciones</Link></div>
               </div>
             </div>
                 )
