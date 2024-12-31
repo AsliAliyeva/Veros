@@ -12,6 +12,9 @@
   scroll-behavior: smooth;
  }
 
+ .myfont{
+  font-family: 'Frunchy';
+ }
 #blog {
   background: url("https://veramar.gt/wp-content/uploads/2024/10/4ocean-3.webp") center/cover;
   background-position: center 100%;

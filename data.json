@@ -71,7 +71,7 @@
             "current": 399.00
         }
     ],
-    "Tienda": [
+    "Tienda": [ 
         {   
              "id": 1,
             "name": "DosPiezas",
@@ -167,7 +167,7 @@
                     "bottle": 13,
                     "size": ["xs", "s", "m", "l", "xl"],
                     "text": "Traje de baño de dos piezas clásico de verano. Top, straples con diseño metalico en V al frente de acero inoxidable y ajuste de amarre en la parte de atras. Bottom, high cut con diseño metálico en los costados.",
-                    "name": "Lily"
+                    "name": "Barbie"
                 },
                 {
                     "id": 11,

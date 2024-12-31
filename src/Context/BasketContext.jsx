@@ -6,14 +6,14 @@ export const BASKET = createContext(null)
 function BasketContext({ children }) {
     const [sebet, setSebet] = useState([])
     const cook = new Cookies()
-    console.log(cook.get("sebet"));
+    // console.log(cook.get("sebet"));
     
-    function addToBasket(id, img, name, current, size, color) {
-        // console.log(id, img, name, current, size, color);
+    function addToBasket(id, img, name, current, size, color, count) {
+        console.log(id, img, name, current, size, color);
         setSebet([...sebet, {
-            id, img, name, current, size, color
+            id, img, name, current, size, color, count
         }])
-        cook.set("sebet", JSON.stringfy(sebet))
+        // cook.set("sebet", JSON.stringfy(sebet))
     }
     return (
         <BASKET.Provider value={{ sebet, setSebet, addToBasket }}>

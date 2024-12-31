@@ -8,6 +8,9 @@ import Layout from './Layouts/Layout'
 import Registartion from './companent/Main/Registartion'
 import Article from './companent/Main/Article'
 import Details from './companent/Main/Details'
+import FirstArt from './companent/Main/FirstArt'
+import SecondArticle from './companent/Main/SecondArticle'
+import ThirdArt from './companent/Main/ThirdArt'
 
 function App() {
   const { pathname} = useLocation()
@@ -28,7 +31,10 @@ function App() {
           <Route path='/tienda' element={<Tienda />} />
           <Route path='/registr' element={<Registartion />} />
           <Route path='/article' element={<Article />} />
-          <Route path='/details/:name/:index/:id?' element={< Details />} />
+          <Route path='/art1' element={<FirstArt />} />
+          <Route path='/art2' element={<SecondArticle />} />
+          <Route path='/art3' element={<ThirdArt />} />
+          <Route path='/details/:name/:index?/:id' element={< Details />} />
         </Route>
       </Routes>
     </>
