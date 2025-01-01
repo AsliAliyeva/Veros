@@ -1,13 +1,12 @@
-import React, { useCallback, useContext } from 'react'
+import React, {  useContext } from 'react'
 import logo from '../../img/logo.webp'
 import veramar from '../../img/veramar.png'
 import { FaBars, FaRegUser } from 'react-icons/fa'
 import { MdOutlineShoppingBag } from 'react-icons/md'
-
-import { useState } from "react";
+import { useState } from "react"
 import { IoMdClose } from 'react-icons/io'
 import { Link, NavLink } from 'react-router-dom'
-import { IoCloseSharp } from "react-icons/io5";
+import { IoCloseSharp } from "react-icons/io5"
 import { BASKET } from '../../Context/BasketContext'
 
 
@@ -16,8 +15,10 @@ function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isBasket, setBasket] = useState(false);
-  const { sebet } = useContext(BASKET)
+  const { sebet, clearBasket, setSebet } = useContext(BASKET)
   const [count, setCount] = useState(0)
+  const totalSum = sebet.reduce((total, item) => total + item.count * item.current, 0);
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -25,20 +26,43 @@ function Header() {
 
   const openBasket = () => {
     setBasket(true);
-  };
+  }
 
   const closeBasket = () => {
     setBasket(false);
   }
-  const inc = (name) => {
-    setCount(count + 1); // prevCount üzərinə 1 əlavə edir
+
+  const inc = (id, size, color) => {
+    const updatedSebet = sebet.map(item => 
+      item.id === id && item.size === size && item.color === color
+        ? { ...item, count: item.count + 1 }
+        : item
+    )
+    setSebet(updatedSebet)
+  }
+
+  const dec = (id, size, color) => {
+    const updatedSebet = sebet
+      .map(item => {
+        if (item.id === id && item.size === size && item.color === color) {
+          if (item.count > 1) {
+            return { ...item, count: item.count - 1 }
+          } else if (item.count === 1) {
+            return null
+          }
+        }
+        return item;
+      })
+      .filter(item => item !== null)
+  
+    setSebet(updatedSebet)
+  }
+  
 
 
-  };
-  const dec = (name) => {
-    setCount(count - 1); // prevCount-dan 1 çıxarır
-  };
-
+  const handleClearBasket = () => {
+    clearBasket()
+  }
   return (
     <div className='relative'>
       <div className='flex justify-between items-center w-[90%] mx-auto my-4 laptop:w-[75%]'>
@@ -70,7 +94,7 @@ function Header() {
             <MdOutlineShoppingBag
               onClick={openBasket}
               className='w-[25px] h-[20px] tablet:w-[35px] tablet:h-[28px] cursor-pointer hover:text-[#8e959d]' />
-            <div className='absolute top-[-5px] right-0 bg-[#748371] border rounded-[50%] px-1 text-[10px] tablet:text-[12px] text-white'>0</div>
+            <div className='absolute top-[-5px] right-0 bg-[#748371] border rounded-[50%] px-1 text-[10px] tablet:text-[12px] text-white'>{sebet.length}</div>
           </div>
         </div>
         <div
@@ -84,12 +108,11 @@ function Header() {
             <IoCloseSharp />
           </button>
 
-          <div className="p-6">
+          <div className="p-6 overflow-y-auto h-[100vh]" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
             <h3 className="text-xl font-semibold">Basket</h3>
             <div>
               {
                 sebet && sebet.map((item, i) => {
-
 
                   return (
                     <div className='flex my-4' key={i}>
@@ -100,30 +123,37 @@ function Header() {
                           <p>Q{item.current}.00</p>
                         </div>
                         <div className='flex gap-2'>
-                          <button onClick={(e) => {
-                            e.preventDefault()
-                            dec(item.name)
-                          }}>-</button>
-                          <p>{item.count}</p>
-                          <button
-                            onClick={(e) => {
-                              e.preventDefault()
-                              inc(item.name)
-
-
-                            }}>+</button>
-                        </div>
+                        <button onClick={(e) => {
+                          e.preventDefault();
+                          dec(item.id, item.size, item.color);
+                        }}>-</button>
+                        <p>{item.count}</p>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            inc(item.id, item.size, item.color);
+                          }}>+</button>
+                      </div>
+                      {/* <div>{item.size}</div>
+                      <div>{item.color}</div> */}
                         <div>
-                          <p>Sum: </p>
+                          <p>Sum:Q{item.count * item.current}.00 </p>
                         </div>
-                        <div><button>sebeti temizle</button></div>
                       </div>
 
                     </div>
                   )
                 })
               }
-              <p>Total:</p>
+              <div><button onClick={handleClearBasket}  disabled={sebet.length === 0} className="clear-basket-button">
+                CLEAR
+              </button></div>
+              <div>
+                {sebet.length === 0 ? (
+                    <p>The basket is empty</p>
+                ) : ''}
+            </div>
+              <p>Total: Q{totalSum}.00</p>
             </div>
           </div>
         </div>

@@ -1,23 +1,22 @@
-/* eslint-disable react/prop-types */
 import { useContext, useState } from 'react'
 import { LiaWineBottleSolid } from 'react-icons/lia'
 import { Link } from 'react-router-dom'
 import { BASKET } from '../../Context/BasketContext'
 
-// eslint-disable-next-line react/prop-types
+
 function TiendaCard({elem,item}) {
 
         const {addToBasket} = useContext(BASKET)
         const[ count, setCount] = useState(1)
 
     const inc = () => {
-        setCount(count + 1); // prevCount üzərinə 1 əlavə edir
-       
-        
-    };
+        setCount(count + 1)        
+    }
     const dec = () => {
-        setCount(count- 1); // prevCount-dan 1 çıxarır
-    };
+        if (count > 1) {
+            setCount(count - 1)
+        }
+    }
   return (
     <>
       <Link className='mini:h-[50vh]' to={`/details/tienda/${item.id}/${elem.id}`} ><img className=' mob:h-[70vh] tablet:h-[80vh] object-contain' src={elem.img[0]} alt="shekil" /></Link>
@@ -55,8 +54,6 @@ function TiendaCard({elem,item}) {
                     onClick={(e)=> {
                         e.preventDefault()
                         inc(elem.name)
-                        
-                        
                     }}>+</button>
                     <p>{count}</p>
                     <button 

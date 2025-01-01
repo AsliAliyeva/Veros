@@ -198,7 +198,7 @@
                 {
                     "id": 1,
                     "name": "Emma",
-                    "current": 782.49,
+                    "current": 782,
                     "bottle": 14,
                     "img": ["https://veramar.gt/wp-content/uploads/2024/10/Bianca_-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Bianca-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Bianca-Detras.webp","https://veramar.gt/wp-content/uploads/2024/10/Bianca-Detalles-1.webp", "https://veramar.gt/wp-content/uploads/2024/10/Bianca-Detalles-3.webp"],
                     "size": ["xs", "s", "m", "l", "xl"],
@@ -207,7 +207,7 @@
                 {
                     "id": 2,
                     "name": "Sophia",
-                    "current": 671.09,
+                    "current": 671,
                     "bottle": 12,
                     "img": ["https://veramar.gt/wp-content/uploads/2024/10/Debora_-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Deborah-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Deborah-Detalles.webp", "https://veramar.gt/wp-content/uploads/2024/10/Deborah-Detras.webp"],
                     "size": ["xs", "s", "m", "l", "xl"],
@@ -216,7 +216,7 @@
                 {
                     "id": 3,
                     "name": "Olivia",
-                    "current": 704.05,
+                    "current": 704,
                     "bottle": 12,
                     "img": ["https://veramar.gt/wp-content/uploads/2024/10/Ada-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Ada-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Ada-Detalles-768x1152.webp", "https://veramar.gt/wp-content/uploads/2024/10/Ada-Detalles-768x1152.webp"],
                     "size": ["xs", "s", "m", "l", "xl"],
@@ -225,7 +225,7 @@
                 {
                     "id": 4,
                     "name": "Chloe",
-                    "current": 795.39,
+                    "current": 795,
                     "bottle": 14,
                     "img": ["https://veramar.gt/wp-content/uploads/2024/10/Mariana-Frente-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Mariana-detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Mariana-Detalles-1.webp", "https://veramar.gt/wp-content/uploads/2024/10/Mariana-Detalles-2-768x1152.webp"],
                     "size": ["xs", "s", "m", "l", "xl"],
@@ -234,7 +234,7 @@
                 {
                     "id": 5,
                     "name": "Mia",
-                    "current": 810.67,
+                    "current": 810,
                     "bottle": 12,
                     "img": ["https://veramar.gt/wp-content/uploads/2024/10/Emperatriz-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Emperatriz-Frente-Cruzado.webp", "https://veramar.gt/wp-content/uploads/2024/10/Emperatriz-Frente-Amarillo.webp", "https://veramar.gt/wp-content/uploads/2024/10/Emperatriz-Frente-Blanco.webp", "https://veramar.gt/wp-content/uploads/2024/10/Emperatriz-Negro.webp"],
                     "size": ["xs", "s", "m", "l", "xl"],
@@ -246,7 +246,7 @@
                     "name": "Ava",
                     "previous": 720.9,
                     "bottle": 12,
-                    "current": 399.00,
+                    "current": 399,
                     "img": ["https://veramar.gt/wp-content/uploads/2024/10/Versalles-1026x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Versalles-frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Versalles-detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Versalles-detalles.webp"],
                     "size": ["xs", "s", "m", "l", "xl"],
                     "text": "Traje de baño de una pieza inspirado en el palacio de Versalles con detalle metálico en V en el cinturón y tiro alto"
@@ -256,7 +256,7 @@
                     "name": "Ella",
                     "previous": 823.44,
                     "bottle": 12,
-                    "current": 400.00,
+                    "current": 400,
                     "img": ["https://veramar.gt/wp-content/uploads/2024/10/Noa-1024x1536.webp", "https://veramar.gt/wp-content/uploads/2024/10/Noa-Frente.webp", "https://veramar.gt/wp-content/uploads/2024/10/Noa-Detras.webp", "https://veramar.gt/wp-content/uploads/2024/10/Noa-Detalles-4.webp"],
                     "size": ["xs", "s", "m", "l", "xl"],
                     "text": "Traje de baño de una pieza con tirantes cruzados en la espalda, escote redondo al frente y detalles bordes negros, LINEA SURF"

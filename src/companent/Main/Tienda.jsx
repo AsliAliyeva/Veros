@@ -9,16 +9,13 @@ import { DATA } from '../../Context/DataContex';
 import { Link } from 'react-router-dom';
 import { BASKET } from '../../Context/BasketContext';
 import TiendaCard from '../CardComponents/TiendaCard';
+import Loading from '../../Loading';
 
 
 function Tienda() {
     const {tienda} = useContext(DATA)
     const {addToBasket} = useContext(BASKET)
     const[ count, setCount] = useState(0)
-
-
-    
-
 
     return (
     <div className=' mini:pb-8 tablet:pb-10'>
@@ -52,27 +49,7 @@ function Tienda() {
         </div>
         
        {
-        tienda.length > 0 &&  tienda.map((item, i)=>{
-
-            // function inc(name) {
-            //     const prod = item.product.find( mehsul => mehsul.name == name)
-            //     if(!prod.count){
-            //         prod.count = 1
-            //     }else{
-            //         prod.count +=1
-            //     }
-            //     console.log(prod.count);
-                
-            // }
-
-            const inc = (name) => {
-                setCount(count + 1); // prevCount üzərinə 1 əlavə edir
-               
-                
-            };
-            const dec = (name) => {
-                setCount(count- 1); // prevCount-dan 1 çıxarır
-            };
+        tienda.length > 0 ?  ( tienda.map((item, i)=>{
         
             return (
                 <div id={`part${i+1}`} key={i} className={`${item.name === "DosPiezas" || item.name ==="Salidas" ? "bg-[#f7ede0]" : ""} mini:pt-6 mob:pb-20  tablet:pb-48 mini:mb-4  mob:mb-10`}>
@@ -111,17 +88,9 @@ function Tienda() {
                     {
                         tienda.length > 0 &&  item.product?.map((elem,index)=> {
                             
-                           
-                            // function dec(name) {
-                            //     // console.log(elem.name);
-                                
-                            // }
-                             
-                            
                             return(
                                 <SwiperSlide className='min:w-[80%] ' key={index}>
                                     <TiendaCard elem={elem} item={item} />
-
                                 </SwiperSlide>
                             )
                         })
@@ -133,7 +102,10 @@ function Tienda() {
                 
             </div>
             )
-        })
+        }))
+        : (
+            <Loading />
+        )
        }
         </div>
   )

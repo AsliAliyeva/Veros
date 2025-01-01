@@ -4,19 +4,35 @@ export const BASKET = createContext(null)
 
 
 function BasketContext({ children }) {
-    const [sebet, setSebet] = useState([])
     const cook = new Cookies()
-    // console.log(cook.get("sebet"));
+    const [sebet, setSebet] = useState(cook.get("sebet") || [])
     
     function addToBasket(id, img, name, current, size, color, count) {
-        console.log(id, img, name, current, size, color);
-        setSebet([...sebet, {
-            id, img, name, current, size, color, count
-        }])
-        // cook.set("sebet", JSON.stringfy(sebet))
+        const existingProduct = sebet.find(item => item.id === id && item.size === size && item.color === color);
+        
+        if (existingProduct) {
+            const updatedSebet = sebet.map(item => 
+                item.id === id && item.size === size && item.color === color
+                    ? { ...item, count: item.count + count }  
+                    : item
+            );
+            setSebet(updatedSebet);  
+            cook.set("sebet", JSON.stringify(updatedSebet)); 
+        } else {
+            const updatedSebet = [...sebet, { id, img, name, current, size, color, count }];
+            setSebet(updatedSebet); 
+            cook.set("sebet", JSON.stringify(updatedSebet)); 
+        }
     }
+
+    function clearBasket() {
+        setSebet([]);  
+        cook.set("sebet", JSON.stringify([]));  
+    }
+
+
     return (
-        <BASKET.Provider value={{ sebet, setSebet, addToBasket }}>
+        <BASKET.Provider value={{ sebet, setSebet, addToBasket, clearBasket }}>
             {children}
         </BASKET.Provider>
     )
