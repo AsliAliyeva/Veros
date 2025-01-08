@@ -11,6 +11,8 @@ import Details from './companent/Main/Details'
 import FirstArt from './companent/Main/FirstArt'
 import SecondArticle from './companent/Main/SecondArticle'
 import ThirdArt from './companent/Main/ThirdArt'
+import Table from './companent/Main/Table'
+import Purchase from './companent/Main/Purchase'
 
 function App() {
   const { pathname} = useLocation()
@@ -30,10 +32,12 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/tienda' element={<Tienda />} />
           <Route path='/registr' element={<Registartion />} />
+          <Route path='/table' element={<Table />} />
           <Route path='/article' element={<Article />} />
           <Route path='/art1' element={<FirstArt />} />
           <Route path='/art2' element={<SecondArticle />} />
           <Route path='/art3' element={<ThirdArt />} />
+          <Route path='/purchase' element={<Purchase />}  />
           <Route path='/details/:name/:index?/:id' element={< Details />} />
         </Route>
       </Routes>

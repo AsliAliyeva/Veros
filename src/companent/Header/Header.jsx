@@ -1,4 +1,4 @@
-import React, {  useContext } from 'react'
+import React, { useContext } from 'react'
 import logo from '../../img/logo.webp'
 import veramar from '../../img/veramar.png'
 import { FaBars, FaRegUser } from 'react-icons/fa'
@@ -7,7 +7,9 @@ import { useState } from "react"
 import { IoMdClose } from 'react-icons/io'
 import { Link, NavLink } from 'react-router-dom'
 import { IoCloseSharp } from "react-icons/io5"
-import { BASKET } from '../../Context/BasketContext'
+import BasketContext, { BASKET } from '../../Context/BasketContext'
+import { Cookies } from 'react-cookie'
+import Purchase from '../Main/Purchase'
 
 
 
@@ -15,10 +17,11 @@ function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
   const [isBasket, setBasket] = useState(false);
-  const { sebet, clearBasket, setSebet } = useContext(BASKET)
+  const { sebet, clearBasket, setSebet, addToBasket } = useContext(BASKET)
   const [count, setCount] = useState(0)
   const totalSum = sebet.reduce((total, item) => total + item.count * item.current, 0);
 
+   const cook = new Cookies()
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -32,32 +35,37 @@ function Header() {
     setBasket(false);
   }
 
-  const inc = (id, size, color) => {
-    const updatedSebet = sebet.map(item => 
+  const inc = (arg) => {
+    const { id, img, name, current, size, color } = arg
+    const updatedSebet = sebet.map(item =>
       item.id === id && item.size === size && item.color === color
         ? { ...item, count: item.count + 1 }
         : item
     )
     setSebet(updatedSebet)
+
+    addToBasket(id, img, name, current, size, color, count)
   }
 
-  const dec = (id, size, color) => {
+  const dec = (arg) => {
+    const { id, img, name, current, size, color } = arg
     const updatedSebet = sebet
       .map(item => {
         if (item.id === id && item.size === size && item.color === color) {
           if (item.count > 1) {
+           
             return { ...item, count: item.count - 1 }
-          } else if (item.count === 1) {
+          } else if (item.count === 1) { 
             return null
           }
         }
         return item;
       })
       .filter(item => item !== null)
-  
+      cook.set("sebet", updatedSebet)
     setSebet(updatedSebet)
   }
-  
+
 
 
   const handleClearBasket = () => {
@@ -123,19 +131,19 @@ function Header() {
                           <p>Q{item.current}.00</p>
                         </div>
                         <div className='flex gap-2'>
-                        <button onClick={(e) => {
-                          e.preventDefault();
-                          dec(item.id, item.size, item.color);
-                        }}>-</button>
-                        <p>{item.count}</p>
-                        <button
-                          onClick={(e) => {
+                          <button onClick={(e) => {
                             e.preventDefault();
-                            inc(item.id, item.size, item.color);
-                          }}>+</button>
-                      </div>
-                      {/* <div>{item.size}</div>
-                      <div>{item.color}</div> */}
+                            dec(item);
+                          }}>-</button>
+                          <p>{item.count}</p>
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              inc(item);
+                            }}>+</button>
+                        </div>
+                        <div>{item.size}</div>
+                        <div>{item.color}</div>
                         <div>
                           <p>Sum:Q{item.count * item.current}.00 </p>
                         </div>
@@ -145,15 +153,25 @@ function Header() {
                   )
                 })
               }
-              <div><button onClick={handleClearBasket}  disabled={sebet.length === 0} className="clear-basket-button">
+              <div><button onClick={handleClearBasket} disabled={sebet.length === 0} className="clear-basket-button">
                 CLEAR
               </button></div>
               <div>
                 {sebet.length === 0 ? (
-                    <p>The basket is empty</p>
+                  <p>The basket is empty</p>
                 ) : ''}
-            </div>
-              <p>Total: Q{totalSum}.00</p>
+              </div>
+              <hr className='my-6' />
+              <p className='mb-4'>Subtotal: Q{totalSum}.00</p>
+              <Link to={"/purchase"} disabled={sebet.length === 0} className="clear-basket-button">
+                Finalize purchase
+              </Link>
+              <Link to={"/final"} disabled={sebet.length === 0} className="clear-basket-button">
+                Finalizar Compra
+              </Link>
+              <div className='hidden'>
+                <Purchase totalSum={totalSum}  />
+              </div>
             </div>
           </div>
         </div>

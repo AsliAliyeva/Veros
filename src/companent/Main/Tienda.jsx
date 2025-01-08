@@ -52,7 +52,7 @@ function Tienda() {
         tienda.length > 0 ?  ( tienda.map((item, i)=>{
         
             return (
-                <div id={`part${i+1}`} key={i} className={`${item.name === "DosPiezas" || item.name ==="Salidas" ? "bg-[#f7ede0]" : ""} mini:pt-6 mob:pb-20  tablet:pb-48 mini:mb-4  mob:mb-10`}>
+                <div id={`part${i+1}`} key={i} className={`${item.name === "DosPiezas" || item.name ==="Salidas" ? "bg-[#f7ede0]" : ""} mini:pt-6 mob:pb-24  tablet:pb-64  mini:mb-4  mob:mb-10`}>
                 <div className='flex gap-6 items-center mini:w-[90%] mob:w-[70%]  laptop:w-[80%] desktop:w-[75%] mx-auto mini:mb-6 mini:mt-2 tablet:mt-6 tablet:mb-16'>
                     <h2 className='mini:text-[20px] mob:text-[28px] tablet:text-[45px] bg-[#d0c5ad] mini:px-4 tablet:px-16' style={{ fontFamily: "'Frunchy', sans-serif" }} >{item.name}</h2>
                       </div>
@@ -62,10 +62,10 @@ function Tienda() {
                     spaceBetween={10}
                     navigation={true}
                     pagination={{
-                    clickable: true,
+                    clickable: true
                     }}
                     autoplay={{
-                        delay: 90000,
+                        delay: 30000,
                         disableOnInteraction: false,
                       }}
                     breakpoints={{
@@ -83,6 +83,7 @@ function Tienda() {
                     },
                     }}
                     modules={[Pagination, Navigation, Autoplay]}
+                    className=''
                     
                 >
                     {

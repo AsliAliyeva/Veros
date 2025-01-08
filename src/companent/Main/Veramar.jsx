@@ -13,7 +13,6 @@ import { LiaWineBottleSolid } from 'react-icons/lia';
 import { DATA } from './../../Context/DataContex';
 import { Link } from 'react-router-dom';
 import Tienda from './Tienda';
-import RandomCard from './../CardComponents/RandomCard';
 
 
 function Veramar() {
@@ -111,7 +110,6 @@ function Veramar() {
         <div className='hidden laptop:flex flex-row items-center justify-between gap-6 w-[90%] mx-auto py-6' style={{ fontFamily: "'Frunchy', sans-serif" }} >
           {
             ofertas.length > 0 && ofertas.map((item, index) => {
-              console.log(item);
 
               return (
                 <div className='w-[33%]' key={index}>
@@ -252,7 +250,6 @@ function Veramar() {
 
         <div></div>
       </div>
-      <div><RandomCard /></div>
     </div>
   )
 }
