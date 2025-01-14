@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
+import './../../index.css'
 
-const Table = () => {
+function Table () {
   return (
-    <div className="overflow-x-auto w-full tablet:w-[70%] mx-auto m-8  ">
-      <table className="min-w-full table-auto text-[10px] tablet:text-[16px] overflow-x-hidden ">
-
-        <thead className=''>
-          <tr className="bg-[#748371] text-white ">
+    <div className="scroll-hidden w-full tablet:w-[70%] mx-auto m-8">
+      <table className="min-w-full table-auto text-[10px] tablet:text-[16px]">
+        <thead>
+          <tr className="bg-[#748371] text-white">
             <th className="px-4 py-2 text-center">Tallas</th>
             <th className="px-4 py-2 text-center">Busto</th>
             <th className="px-4 py-2 text-center">Cintura</th>
@@ -14,7 +14,6 @@ const Table = () => {
             <th className="px-4 py-2 text-center">Brassiere</th>
           </tr>
         </thead>
-
         <tbody>
           <tr className="bg-[#f2f2f2] text-[#748371]">
             <td className="px-4 py-2 text-center">XS</td>
@@ -51,7 +50,6 @@ const Table = () => {
             <td className="px-4 py-2 text-center">106-115</td>
             <td className="px-4 py-2 text-center">40B-38C-40C</td>
           </tr>
-          
         </tbody>
       </table>
     </div>

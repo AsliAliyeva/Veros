@@ -16,7 +16,7 @@ const getRandomItems = (items, num) => {
     return selectedItems;
 }
 
-const RandomCard = () => {
+function RandomCard ()  {
     const [randomProducts, setRandomProducts] = useState([])
     const { tienda } = useContext(DATA)
 
@@ -25,13 +25,13 @@ const RandomCard = () => {
             const allProducts = tienda.flatMap(tiendaCategory =>
                 tiendaCategory.product?.map(product => ({
                     ...product,
-                    parentId: tiendaCategory.id, // Valideyn obyektin id-si
+                    parentId: tiendaCategory.id,
                 })) || []
-            );
+            )
 
             if (allProducts.length > 0) {
                 const selectedProducts = getRandomItems(allProducts, 3);
-                setRandomProducts(selectedProducts);
+                setRandomProducts(selectedProducts)
             }
         }
     }, [tienda])
@@ -56,7 +56,6 @@ const RandomCard = () => {
                                     >
                                         Seleccionar opciones
                                     </Link>
-                                    {/* Valideyn obyektin id-sini göstəririk */}
                                     <div>Parent ID: {product.parentId}</div>
                                 </div>
                             </div>

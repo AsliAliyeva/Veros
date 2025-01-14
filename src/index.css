@@ -41,6 +41,16 @@
   background: black!important;
 }
 
+.scroll-hidden {
+  overflow-x: auto; 
+  scrollbar-width: none; 
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none
+}
+
+
 @media (max-width: 480px) {
   .swiper-pagination-bullet {
     width: 7px!important;

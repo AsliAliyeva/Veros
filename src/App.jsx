@@ -13,6 +13,7 @@ import SecondArticle from './companent/Main/SecondArticle'
 import ThirdArt from './companent/Main/ThirdArt'
 import Table from './companent/Main/Table'
 import Purchase from './companent/Main/Purchase'
+import Final from './companent/Main/Final'
 
 function App() {
   const { pathname} = useLocation()
@@ -38,6 +39,7 @@ function App() {
           <Route path='/art2' element={<SecondArticle />} />
           <Route path='/art3' element={<ThirdArt />} />
           <Route path='/purchase' element={<Purchase />}  />
+          <Route path='/final' element={<Final />}  />
           <Route path='/details/:name/:index?/:id' element={< Details />} />
         </Route>
       </Routes>

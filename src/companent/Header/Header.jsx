@@ -5,23 +5,27 @@ import { FaBars, FaRegUser } from 'react-icons/fa'
 import { MdOutlineShoppingBag } from 'react-icons/md'
 import { useState } from "react"
 import { IoMdClose } from 'react-icons/io'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { IoCloseSharp } from "react-icons/io5"
 import BasketContext, { BASKET } from '../../Context/BasketContext'
 import { Cookies } from 'react-cookie'
 import Purchase from '../Main/Purchase'
+import Final from '../Main/Final'
+import { DATA } from './../../Context/DataContex';
 
 
 
 function Header() {
+  
 
   const [isOpen, setIsOpen] = useState(false);
   const [isBasket, setBasket] = useState(false);
   const { sebet, clearBasket, setSebet, addToBasket } = useContext(BASKET)
+  const { tienda } = useContext(DATA)
   const [count, setCount] = useState(0)
   const totalSum = sebet.reduce((total, item) => total + item.count * item.current, 0);
 
-   const cook = new Cookies()
+  const cook = new Cookies()
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -53,16 +57,16 @@ function Header() {
       .map(item => {
         if (item.id === id && item.size === size && item.color === color) {
           if (item.count > 1) {
-           
+
             return { ...item, count: item.count - 1 }
-          } else if (item.count === 1) { 
+          } else if (item.count === 1) {
             return null
           }
         }
         return item;
       })
       .filter(item => item !== null)
-      cook.set("sebet", updatedSebet)
+    cook.set("sebet", updatedSebet)
     setSebet(updatedSebet)
   }
 
@@ -71,7 +75,12 @@ function Header() {
   const handleClearBasket = () => {
     clearBasket()
   }
+
+
+
+
   return (
+    
     <div className='relative'>
       <div className='flex justify-between items-center w-[90%] mx-auto my-4 laptop:w-[75%]'>
         <Link to={"/"}><img className='w-[70px] max-h-[70px] tablet:max-h-[90px] tablet:w-[90px]' src={logo} alt="logo" /></Link>
@@ -80,7 +89,7 @@ function Header() {
       </div>
       <div className=' mob:w-[80%] tablet:w-[60%]  flex-col tablet:flex-row mx-auto mt-8 flex justify-between items-center'>
         <div className=' w-[50%] mb-5 tablet:mb-0 items-center tablet:gap-x-10 laptop:w-[20%] flex flex-wrap justify-between '>
-          <button className='bg-[#d0c5ad] mini:text-[12px] tablet:text-[16px] mb-1 font-bold px-6 py-2 rounded-[5px] border hover:bg-[#748371] hover:text-white transition duration-200'><Link to={"/tienda"}>Tienda</Link></button>
+          <button className='bg-[#d0c5ad] text-[12px] tablet:text-[16px] mb-1 font-bold px-6 py-2 rounded-[5px] border hover:bg-[#748371] hover:text-white transition duration-200'><Link to={"/tienda"}>Tienda</Link></button>
           <div
             className='bg-[#f2f2f2] flex laptop:hidden  border rounded cursor-pointer mb-1'
             onClick={toggleMenu}
@@ -121,10 +130,10 @@ function Header() {
             <div>
               {
                 sebet && sebet.map((item, i) => {
-
-                  return (
+                  
+                  return(
                     <div className='flex my-4' key={i}>
-                      <div><img className='h-[8vh] mr-1' src={item.img} alt="" /></div>
+                      <div ><img className='h-[8vh] mr-1' src={item.img} alt="" /></div>
                       <div>
                         <div className='flex justify-between gap-6'>
                           <p>x{item.count}</p>
@@ -163,22 +172,33 @@ function Header() {
               </div>
               <hr className='my-6' />
               <p className='mb-4'>Subtotal: Q{totalSum}.00</p>
-              <Link to={"/purchase"} disabled={sebet.length === 0} className="clear-basket-button">
-                Finalize purchase
-              </Link>
-              <Link to={"/final"} disabled={sebet.length === 0} className="clear-basket-button">
-                Finalizar Compra
-              </Link>
+              <div
+                className={`bg-[#d0c5ad] text-center mini:text-[12px] tablet:text-[16px] mb-1 px-6 py-2 rounded-[5px] border ${sebet.length === 0 ? '' : 'hover:bg-[#748371] hover:text-white transition duration-200'
+                  }`}
+                style={{ pointerEvents: sebet.length === 0 ? 'none' : 'auto' }}
+              >
+                <Link to={sebet.length === 0 ? "#" : "/purchase"}>
+                  Ver Carrito
+                </Link>
+              </div>
+
+              <div
+                className={`bg-[#d0c5ad] text-center mini:text-[12px] tablet:text-[16px] mb-1 px-6 py-2 rounded-[5px] border ${sebet.length === 0 ? '' : 'hover:bg-[#748371] hover:text-white transition duration-200'
+                  }`}
+                style={{ pointerEvents: sebet.length === 0 ? 'none' : 'auto' }}
+              >
+                <Link to={sebet.length === 0 ? "#" : "/final"}>
+                  Finalizar Compra
+                </Link>
+              </div>
+
               <div className='hidden'>
-                <Purchase totalSum={totalSum}  />
+                <Purchase totalSum={totalSum} />
+                <Final totalSum={totalSum} />
               </div>
             </div>
           </div>
         </div>
-
-
-
-
       </div>
       <div
         className={`${isOpen ? "max-h-[30vh]" : "max-h-0 "} flex laptop:hidden overflow-hidden  absolute mt-1  w-[100%] top-[100%] flex-col bg-[#748371] text-[#f7edde] transition-all duration-500 ease-in-out z-10 `}
