@@ -5,9 +5,9 @@ import { FaBars, FaRegUser } from 'react-icons/fa'
 import { MdOutlineShoppingBag } from 'react-icons/md'
 import { useState } from "react"
 import { IoMdClose } from 'react-icons/io'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate, useParams } from 'react-router-dom'
 import { IoCloseSharp } from "react-icons/io5"
-import BasketContext, { BASKET } from '../../Context/BasketContext'
+import  { BASKET } from '../../Context/BasketContext'
 import { Cookies } from 'react-cookie'
 import Purchase from '../Main/Purchase'
 import Final from '../Main/Final'
@@ -23,6 +23,7 @@ function Header() {
   const { sebet, clearBasket, setSebet, addToBasket } = useContext(BASKET)
   const { tienda } = useContext(DATA)
   const [count, setCount] = useState(0)
+  const { name, id, index } = useParams()
   const totalSum = sebet.reduce((total, item) => total + item.count * item.current, 0);
 
   const cook = new Cookies()
@@ -77,7 +78,13 @@ function Header() {
   }
 
 
+  const navigate = useNavigate()
 
+  const handleProductClick = (name, index, id) => {
+    navigate(`/details/${name}/${index}/${id}`)
+  }
+  console.log(id);
+  
 
   return (
     
@@ -130,10 +137,11 @@ function Header() {
             <div>
               {
                 sebet && sebet.map((item, i) => {
+                 
                   
                   return(
                     <div className='flex my-4' key={i}>
-                      <div ><img className='h-[8vh] mr-1' src={item.img} alt="" /></div>
+                      <div><img className='h-[8vh] mr-1' src={item.img} alt="" /></div>
                       <div>
                         <div className='flex justify-between gap-6'>
                           <p>x{item.count}</p>

@@ -7,7 +7,7 @@ function Registartion() {
        <h3 className='mini:text-[25px] tablet:text-[40px] mini:my-10 tablet:my-20'>Acceder</h3>
        <form className='mob:border rounded mini:p-0 mob:p-8 border-[#d5d8dc]' action="">
             <p className='text-[#69727d] mb-2 font-semibold mini:text-[14px] tablet:text-[17px]'>Nombre de usuario o correo electrónico</p>
-            <input className='bg-[#f9fafa] outline-none py-3 w-full' type="text" />
+            <input className='bg-[#f9fafa] outline-none py-3 w-full' type="email" />
             <p className='text-[#69727d] mb-2 font-semibold mini:text-[14px] tablet:text-[17px]'>Contraseña</p>
             <input className='bg-[#f9fafa] outline-none py-3 w-full' type="password" />
             <div className='mt-8 flex mini:flex-col tablet:flex-row gap-4 items-start'>
